@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+    <title>Landing</title>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="logo-container">
+                <img src="{% static 'images/logo.png' %}" alt="">
+            </div>
+            <div class="content">
+               <form class="form-container" method="post" action=".">
+                {% csrf_token %}
+                <input type="text" id="username" name="username" placeholder="Email" />
+                <input type="password" id="password" name="password" placeholder="password" />
+                <button type="submit">Login</button>
+
+               </form>
+            </div>
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="message {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

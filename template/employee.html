@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Form</title>
+    <link rel="stylesheet" href="{% static 'styles/employee.css' %}">
+</head>
+<body>
+
+<div class="head">
+    <h2>KPI</h2>
+    <div class="head-items">
+        <a href="">Projects</a>
+        <a href="">welcome {{user.username}}</a>
+        <a href="{% url 'logout_view' %}">logout</a>
+    </div>
+</div>
+<div class="container">
+    <h2>Project Charter</h2>
+
+    <form id="projectForm" method="POST">
+        {% csrf_token %}
+
+        <div class="form-row">
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Project Name</label>
+                    <input type="text" name="project_name">
+                </div>
+                <div class="input-field">
+                    <label>IT Project Manager</label>
+                    <input type="text" name="it_project_manager">
+                </div>
+                <div class="input-field">
+                    <label>IT Service Owner Manager</label>
+                    <input type="text" name="it_service_owner_manager">
+                </div>
+                <div class="input-field">
+                    <label>Business Sponsor</label>
+                    <input type="text" name="business_sponsor">
+                </div>
+                <div class="input-field">
+                    <label>Business Owner</label>
+                    <input type="text" name="business_owner">
+                </div>
+                <div class="input-field">
+                    <label>Start Date</label>
+                    <input type="date" name="project_start_date">
+                </div>
+
+
+            </div>
+
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Portfolio</label>
+                    <input type="text" name="portfolio_operations">
+                </div>
+                <div class="input-field-check">
+                    <label>Critical Project</label>
+                    <input type="checkbox" name="critical_project">
+                </div>
+                <div class="input-field">
+                    <label>Budget Owner</label>
+                    <input type="text" name="budget_owner">
+                </div>
+                <div class="input-field">
+                    <label>Project Budget</label>
+                    <input type="text" name="project_budget">
+                </div>
+                <div class="input-field">
+                    <label>IT PMO</label>
+                    <input type="text" name="it_pmo">
+                </div>
+                <div class="input-field">
+                    <label>Finish Date</label>
+                    <input type="date" name="project_finish_date">
+                </div>
+            </div>
+        </div>
+
+        <hr class="seperator"/>
+
+        <div>
+
+            <div class="input-field">
+                <label>Project Description</label>
+                <textarea name="project_description"></textarea>
+            </div>
+            <div class="input-field">
+                <label>Business Value</label>
+                <textarea name="business_value"></textarea>
+            </div>
+            <div class="input-field">
+                <label>ROI (%)</label>
+                 <input type="number" name="roi">
+            </div>
+            <div class="input-field">
+                <label>Project Scope</label>
+                <textarea name="project_scope"></textarea>
+            </div>
+            <div class="input-field">
+                <label>Constraints</label>
+                <textarea name="constraints"></textarea>
+            </div>
+            <div class="input-field">
+                <label>Vendor Service Support</label>
+                <textarea name="vendor_service_support"></textarea>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    
+    </form>
+</div>
+
+
+</body>
+</html>

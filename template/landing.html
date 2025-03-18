@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/landing.css' %}">
+    <title>Landing</title>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="logo-container">
+                <img src="{% static 'images/logo.png' %}" alt="">
+            </div>
+            <div class="content">
+                <div class="manager">
+                    <a href="{% url 'login-view' %}">Managers</a>
+                </div>
+                <div class="employee">
+                    <a href="{% url 'login-view' %}">Employees</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

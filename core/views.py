@@ -46,16 +46,56 @@ def get_progress(request):
 
 
 
+# @login_required
+# def employee_view(request):
+#     if request.method == "POST":
+#         form = ProjectFormModel(request.POST)
+#         print(form)
+#         if form.is_valid():
+#             test = form.cleaned_data["dev-first-name"]
+#             print("test: ", test)
+#             project = form.save(commit=False)
+#             project.user = request.user  # Assign the logged-in user
+#             project.save()
+#     return render(request, "employee.html")
+
+
+
 @login_required
 def employee_view(request):
     if request.method == "POST":
-        form = ProjectFormModel(request.POST)
-        print(form)
-        if form.is_valid():
-            project = form.save(commit=False)
-            project.user = request.user  # Assign the logged-in user
-            project.save()
+        form_data = request.session.get("form_data", {})
+
+        form_data.update(request.POST.dict())
+        request.session["form_data"] = form_data
+
+        if "final_submit" in request.POST:
+            form = ProjectFormModel(form_data)
+            if form.is_valid():
+                test = form.cleaned_data["dev_first_name"]
+                print(test)
+                project = form.save(commit=False)
+                project.user = request.user  # Assign user
+                project.save()
+                del request.session["form_data"]  # Clear session data
+                return redirect("success_view")  # Redirect after saving
+
     return render(request, "employee.html")
+
+
+
+def success_view(request):
+    return render(request, "success.html")
+
+
+
+
+
+
+
+
+
+
 
 
 def logout_view(request):

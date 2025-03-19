@@ -22,6 +22,32 @@ class ProjectForm(models.Model):
     constraints = models.TextField(blank=True, null=True)
     vendor_service_support = models.TextField(blank=True, null=True)
 
+    # Delivrabels tabel
+
+
+    dev_first_name = models.CharField(max_length=255, blank=True, null=True)
+    dev_first_date = models.DateField(blank=True, null=True)
+
+    dev_second_name = models.CharField(max_length=255, blank=True, null=True)
+    dev_second_date = models.DateField(blank=True, null=True)
+
+    dev_third_name = models.CharField(max_length=255, blank=True, null=True)
+    dev_third_date = models.DateField(blank=True, null=True)
+
+    dev_fourth_name = models.CharField(max_length=255, blank=True, null=True)
+    dev_fourth_date = models.DateField(blank=True, null=True)
+
+    dev_fifth_name = models.CharField(max_length=255, blank=True, null=True)
+    dev_fifth_date = models.DateField(blank=True, null=True)
+
+    dev_sixth_name = models.CharField(max_length=255, blank=True, null=True)
+    dev_sixth_date = models.DateField(blank=True, null=True)
+
+
+
+
+
+
     progress = models.IntegerField(default=0)  # Store progress percentage
 
     # **Field Weights (Score per Field)**
@@ -43,6 +69,11 @@ class ProjectForm(models.Model):
         "project_scope": 3,
         # "constraints": 5,
         # "vendor_service_support": 5,
+        # ##################################
+
+        "dev_first_name": 2,
+        "dev_first_date": 2,
+
     }
 
     def calculate_progress(self):

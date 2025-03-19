@@ -14,7 +14,7 @@ class ProjectForm(models.Model):
     business_owner = models.CharField(max_length=255, blank=True, null=True)
     project_start_date = models.DateField(blank=True, null=True)
     project_finish_date = models.DateField(blank=True, null=True)
-    
+
     project_description = models.TextField(blank=True, null=True)
     business_value = models.TextField(blank=True, null=True)
     roi = models.IntegerField(blank=True, null=True)  # ROI in percentage
@@ -24,21 +24,44 @@ class ProjectForm(models.Model):
 
     progress = models.IntegerField(default=0)  # Store progress percentage
 
+    # **Field Weights (Score per Field)**
+    FIELD_WEIGHTS = {
+        "project_name": 1,
+        # "portfolio_operations": 1,
+        "it_project_manager": 1,
+        "critical_project": 1,
+        "it_service_owner_manager": 1,
+        # "budget_owner": 5,
+        # "business_sponsor": 10,
+        # "project_budget": 10,
+        # "business_owner": 5,
+        "project_start_date": 4,
+        "project_finish_date": 4,
+        "project_description": 3,
+        # "business_value": 10,
+        # "roi": 10,
+        "project_scope": 3,
+        # "constraints": 5,
+        # "vendor_service_support": 5,
+    }
 
     def calculate_progress(self):
-        total_fields = 17  # Adjust based on actual field count
-        filled_fields = 0
-        
-        for field in self._meta.fields:
-            if field.name not in ["id", "user", "progress"]:
-                value = getattr(self, field.name)
-                if isinstance(value, bool):
-                    if value:  # Count booleans if True
-                        filled_fields += 1
-                elif value:  # Count non-empty fields
-                    filled_fields += 1
+        """Calculate weighted progress based on filled fields."""
+        total_score = sum(self.FIELD_WEIGHTS.values())  # Maximum possible score
+        print(total_score)
+        earned_score = 0
 
-        self.progress = (filled_fields / total_fields) * 100
+        for field, score in self.FIELD_WEIGHTS.items():
+            value = getattr(self, field)
+
+            # Count booleans if True, count non-empty fields
+            if isinstance(value, bool):
+                if value:
+                    earned_score += score
+            elif value:
+                earned_score += score
+
+        self.progress = (earned_score / total_score) * 100 if total_score > 0 else 0
 
     def save(self, *args, **kwargs):
         self.calculate_progress()

@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles/admin.css' %}" />
+
+    <title>User Projects</title>
+  </head>
+  <body>
+    <div class="head">
+      <div class="kpi">
+        <h1>KPI</h1>
+      </div>
+      <div></div>
+      <div class="search">
+        <input type="text" name="search" id="search" placeholder="search" />
+        <button>Search</button>
+      </div>
+
+      <div class="button-nav">
+        <div class="out">
+          <a href="{% url 'employee-view'%}">Add Project</a>
+        </div>
+        <div class="out">
+          <a href="{% url 'logout_view'%}">Log Out</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      {% for i in num_circles %}
+      <div class="circle-container">
+        <div class="progress-container" id="circle-{{ i }}">
+          <svg width="150" height="150">
+            <!-- Background (Orange by default) -->
+            <circle
+              cx="75"
+              cy="75"
+              r="50"
+              stroke="#f7931a"
+              stroke-width="10"
+              fill="transparent"
+              stroke-dasharray="314"
+              stroke-dashoffset="0"
+              stroke-linecap="round"
+            />
+
+            <!-- Progress (Green) -->
+            <circle
+              class="progress-ring"
+              cx="75"
+              cy="75"
+              r="50"
+              stroke="#1c8c44"
+              stroke-width="10"
+              fill="transparent"
+              stroke-dasharray="314"
+              stroke-dashoffset="314"
+              stroke-linecap="round"
+            />
+          </svg>
+          <div class="progress-text">0%</div>
+          <div class="project-name-container">
+            <a class="project-name" href=""></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <script src="{% static 'js/progress_circle_emplyee.js' %}" defer></script>
+  </body>
+</html>

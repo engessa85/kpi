@@ -49,6 +49,13 @@
                         <label>Business Owner</label>
                         <input type="text" name="business_owner" value="{{project.business_owner}}">
                     </div>
+                     {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert">
+                        {{ message }}
+                        </div>
+                    {% endfor %}
+                    {% endif %}
                     <div class="input-field">
                         <label>Start Date</label>
                         <input type="date" name="project_start_date" value="{{ project.project_start_date|date:'Y-m-d' }}">
@@ -78,6 +85,13 @@
                         <label>IT PMO</label>
                         <input type="text" name="it_pmo" value="{{project.it_pmo}}">
                     </div>
+                    {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert">
+                        {{ message }}
+                        </div>
+                    {% endfor %}
+                    {% endif %}
                     <div class="input-field">
                         <label>Finish Date</label>
                        

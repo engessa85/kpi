@@ -234,15 +234,10 @@ class ProjectForm(models.Model):
 
     def save(self, *args, **kwargs):
         self.calculate_progress()
-
-        
-        
         for field in self._meta.fields:
             value = getattr(self, field.name)
             if isinstance(field, models.DateField) and value == "":
                 setattr(self, field.name, None)
-        
-
         super().save(*args, **kwargs)
 
   

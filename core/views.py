@@ -67,10 +67,18 @@ def employee_view(request):
         request.session["form_data"] = form_data
 
         if "final_submit" in request.POST:
+            start_date_str = form_data.get("project_start_date")
+            finish_date_str = form_data.get("project_finish_date")
+          
+            if finish_date_str < start_date_str:
+                messages.error(request, "Project finish date must be after the start date.")
+                return render(request, "employee.html")
+            
             form = ProjectFormModel(form_data)
             if form.is_valid():
                 project = form.save(commit=False)
                 project.user = request.user  
+                project.full_clean()
                 project.save()
                 del request.session["form_data"]  
                 return redirect("employee-projects")
@@ -114,6 +122,11 @@ def modify_employee_projects_view(request, id):
         project.project_scope = request.POST.get('project_scope')
         project.constraints = request.POST.get('constraints')
         project.vendor_service_support = request.POST.get('vendor_service_support')
+
+        if project.project_start_date and project.project_finish_date and project.project_start_date > project.project_finish_date:
+            messages.error(request, "Finish date must be after the start date.")
+            return render(request, 'employeeModify.html', {'project': project})
+
 
         # Deliverables
         project.dev_first_name = request.POST.get('dev_first_name')
@@ -184,6 +197,7 @@ def modify_employee_projects_view(request, id):
 
 
         # Save the project
+        project.full_clean()
         project.save()
         return redirect('employee-projects')  # or wherever you want
 

@@ -58,32 +58,86 @@ def get_progress_employee(request):
 
 
 
+# @login_required
+# def employee_view(request):
+#     if request.method == "POST":
+#         form_data = request.session.get("form_data", {})
+
+#         form_data.update(request.POST.dict())
+#         request.session["form_data"] = form_data
+
+#         if "final_submit" in request.POST:
+#             start_date_str = form_data.get("project_start_date")
+#             finish_date_str = form_data.get("project_finish_date")
+          
+#             if finish_date_str < start_date_str:
+#                 messages.error(request, "Project finish date must be after the start date.")
+#                 return render(request, "employee.html",context={'extra_tasks_range': range(1, 23),'extra_risks_range': range(1, 4), 'extra_stack_range': range(1, 6)})
+            
+#             form = ProjectFormModel(form_data, request.FILES)
+#             if form.is_valid():
+#                 project = form.save(commit=False)
+#                 project.user = request.user  
+#                 project.full_clean()
+#                 project.save()
+#                 del request.session["form_data"]  
+#                 return redirect("employee-projects")
+
+#     return render(request, "employee.html", context={'extra_tasks_range': range(1, 23),'extra_risks_range': range(1, 4), 'extra_stack_range': range(1, 6)})
+
+
+
+
 @login_required
 def employee_view(request):
     if request.method == "POST":
         form_data = request.session.get("form_data", {})
-
         form_data.update(request.POST.dict())
         request.session["form_data"] = form_data
 
         if "final_submit" in request.POST:
             start_date_str = form_data.get("project_start_date")
             finish_date_str = form_data.get("project_finish_date")
-          
+
             if finish_date_str < start_date_str:
                 messages.error(request, "Project finish date must be after the start date.")
-                return render(request, "employee.html")
-            
-            form = ProjectFormModel(form_data)
+                return render(request, "employee.html", context={
+                    'extra_tasks_range': range(1, 23),
+                    'extra_risks_range': range(1, 4),
+                    'extra_stack_range': range(1, 6),
+                })
+
+            form = ProjectFormModel(form_data, request.FILES)
             if form.is_valid():
                 project = form.save(commit=False)
-                project.user = request.user  
+                project.user = request.user
+
+                # Save uploaded signature files
+                project.it_project_sig = request.FILES.get("it_project_manager_sig")
+                project.it_service_sig = request.FILES.get("it_service_owner_manager_sig")
+                project.it_business_sig = request.FILES.get("it_business_partener_sig")
+                project.it_pmo_sig = request.FILES.get("it_pmo_manager_sig")
+
+                # Save names
+                project.it_project_name = request.POST.get("it_project_manager")
+                project.it_service_name = request.POST.get("it_service_owner_manager")
+                project.it_business_name = request.POST.get("it_business_partener")
+                project.it_pmo_name = request.POST.get("it_pmo_manager")
+
+                # Optional: If you also want to save Business Owner/Rep/PM
+                project.business_name = request.POST.get("business_name")
+                project.business_sig = request.FILES.get("business_sig")
+
                 project.full_clean()
                 project.save()
-                del request.session["form_data"]  
+                del request.session["form_data"]
                 return redirect("employee-projects")
 
-    return render(request, "employee.html")
+    return render(request, "employee.html", context={
+        'extra_tasks_range': range(1, 23),
+        'extra_risks_range': range(1, 4),
+        'extra_stack_range': range(1, 6),
+    })
 
 
 
@@ -142,6 +196,36 @@ def modify_employee_projects_view(request, id):
         project.dev_sixth_name = request.POST.get('dev_sixth_name')
         project.dev_sixth_date = request.POST.get('dev_sixth_date')
 
+        project.dev_extra_name_1 = request.POST.get('dev_extra_name_1')
+        project.dev_extra_date_1 = request.POST.get('dev_extra_date_1')
+
+        project.dev_extra_name_2 = request.POST.get('dev_extra_name_2')
+        project.dev_extra_date_2 = request.POST.get('dev_extra_date_2')
+
+        project.dev_extra_name_3 = request.POST.get('dev_extra_name_3')
+        project.dev_extra_date_3 = request.POST.get('dev_extra_date_3')
+
+        project.dev_extra_name_4 = request.POST.get('dev_extra_name_4')
+        project.dev_extra_date_4 = request.POST.get('dev_extra_date_4')
+
+        project.dev_extra_name_5 = request.POST.get('dev_extra_name_5')
+        project.dev_extra_date_5 = request.POST.get('dev_extra_date_5')
+
+        project.dev_extra_name_6 = request.POST.get('dev_extra_name_6')
+        project.dev_extra_date_6 = request.POST.get('dev_extra_date_6')
+
+        project.dev_extra_name_7 = request.POST.get('dev_extra_name_7')
+        project.dev_extra_date_7 = request.POST.get('dev_extra_date_7')
+
+        project.dev_extra_name_8 = request.POST.get('dev_extra_name_8')
+        project.dev_extra_date_8 = request.POST.get('dev_extra_date_8')
+
+        project.dev_extra_name_9 = request.POST.get('dev_extra_name_9')
+        project.dev_extra_date_9 = request.POST.get('dev_extra_date_9')
+
+        project.dev_extra_name_10 = request.POST.get('dev_extra_name_10')
+        project.dev_extra_date_10 = request.POST.get('dev_extra_date_10')
+
         # Tasks
         project.first_task_name = request.POST.get('first_task_name')
         project.first_task_duration = request.POST.get('first_task_duration')
@@ -155,6 +239,120 @@ def modify_employee_projects_view(request, id):
         project.third_task_duration = request.POST.get('third_task_duration')
         project.third_task_starting = request.POST.get('third_task_starting')
         project.third_task_ending = request.POST.get('third_task_ending')
+
+
+        project.task_name_extra_1 = request.POST.get('task_name_extra_1')
+        project.task_duration_extra_1 = request.POST.get('task_duration_extra_1')
+        project.task_starting_extra_1 = request.POST.get('task_starting_extra_1')
+        project.task_ending_extra_1 = request.POST.get('task_ending_extra_1')
+
+        project.task_name_extra_2 = request.POST.get('task_name_extra_2')
+        project.task_duration_extra_2 = request.POST.get('task_duration_extra_2')
+        project.task_starting_extra_2 = request.POST.get('task_starting_extra_2')
+        project.task_ending_extra_2 = request.POST.get('task_ending_extra_2')
+
+        project.task_name_extra_3 = request.POST.get('task_name_extra_3')
+        project.task_duration_extra_3 = request.POST.get('task_duration_extra_3')
+        project.task_starting_extra_3 = request.POST.get('task_starting_extra_3')
+        project.task_ending_extra_3 = request.POST.get('task_ending_extra_3')
+
+        project.task_name_extra_4 = request.POST.get('task_name_extra_4')
+        project.task_duration_extra_4 = request.POST.get('task_duration_extra_4')
+        project.task_starting_extra_4 = request.POST.get('task_starting_extra_4')
+        project.task_ending_extra_4 = request.POST.get('task_ending_extra_4')
+
+        project.task_name_extra_5 = request.POST.get('task_name_extra_5')
+        project.task_duration_extra_5 = request.POST.get('task_duration_extra_5')
+        project.task_starting_extra_5 = request.POST.get('task_starting_extra_5')
+        project.task_ending_extra_5 = request.POST.get('task_ending_extra_5')
+
+        project.task_name_extra_6 = request.POST.get('task_name_extra_6')
+        project.task_duration_extra_6 = request.POST.get('task_duration_extra_6')
+        project.task_starting_extra_6 = request.POST.get('task_starting_extra_6')
+        project.task_ending_extra_6 = request.POST.get('task_ending_extra_6')
+
+        project.task_name_extra_7 = request.POST.get('task_name_extra_7')
+        project.task_duration_extra_7 = request.POST.get('task_duration_extra_7')
+        project.task_starting_extra_7 = request.POST.get('task_starting_extra_7')
+        project.task_ending_extra_7 = request.POST.get('task_ending_extra_7')
+
+        project.task_name_extra_8 = request.POST.get('task_name_extra_8')
+        project.task_duration_extra_8 = request.POST.get('task_duration_extra_8')
+        project.task_starting_extra_8 = request.POST.get('task_starting_extra_8')
+        project.task_ending_extra_8 = request.POST.get('task_ending_extra_8')
+
+        project.task_name_extra_9 = request.POST.get('task_name_extra_9')
+        project.task_duration_extra_9 = request.POST.get('task_duration_extra_9')
+        project.task_starting_extra_9 = request.POST.get('task_starting_extra_9')
+        project.task_ending_extra_9 = request.POST.get('task_ending_extra_9')
+
+        project.task_name_extra_10 = request.POST.get('task_name_extra_10')
+        project.task_duration_extra_10 = request.POST.get('task_duration_extra_10')
+        project.task_starting_extra_10 = request.POST.get('task_starting_extra_10')
+        project.task_ending_extra_10 = request.POST.get('task_ending_extra_10')
+
+        project.task_name_extra_11 = request.POST.get('task_name_extra_11')
+        project.task_duration_extra_11 = request.POST.get('task_duration_extra_11')
+        project.task_starting_extra_11 = request.POST.get('task_starting_extra_11')
+        project.task_ending_extra_11 = request.POST.get('task_ending_extra_11')
+
+        project.task_name_extra_12 = request.POST.get('task_name_extra_12')
+        project.task_duration_extra_12 = request.POST.get('task_duration_extra_12')
+        project.task_starting_extra_12 = request.POST.get('task_starting_extra_12')
+        project.task_ending_extra_12 = request.POST.get('task_ending_extra_12')
+
+        project.task_name_extra_13 = request.POST.get('task_name_extra_13')
+        project.task_duration_extra_13 = request.POST.get('task_duration_extra_13')
+        project.task_starting_extra_13 = request.POST.get('task_starting_extra_13')
+        project.task_ending_extra_13 = request.POST.get('task_ending_extra_13')
+
+        project.task_name_extra_14 = request.POST.get('task_name_extra_14')
+        project.task_duration_extra_14 = request.POST.get('task_duration_extra_14')
+        project.task_starting_extra_14 = request.POST.get('task_starting_extra_14')
+        project.task_ending_extra_14 = request.POST.get('task_ending_extra_14')
+
+        project.task_name_extra_15 = request.POST.get('task_name_extra_15')
+        project.task_duration_extra_15 = request.POST.get('task_duration_extra_15')
+        project.task_starting_extra_15 = request.POST.get('task_starting_extra_15')
+        project.task_ending_extra_15 = request.POST.get('task_ending_extra_15')
+
+        project.task_name_extra_16 = request.POST.get('task_name_extra_16')
+        project.task_duration_extra_16 = request.POST.get('task_duration_extra_16')
+        project.task_starting_extra_16 = request.POST.get('task_starting_extra_16')
+        project.task_ending_extra_16 = request.POST.get('task_ending_extra_16')
+
+        project.task_name_extra_17 = request.POST.get('task_name_extra_17')
+        project.task_duration_extra_17 = request.POST.get('task_duration_extra_17')
+        project.task_starting_extra_17 = request.POST.get('task_starting_extra_17')
+        project.task_ending_extra_17 = request.POST.get('task_ending_extra_17')
+
+        project.task_name_extra_18 = request.POST.get('task_name_extra_18')
+        project.task_duration_extra_18 = request.POST.get('task_duration_extra_18')
+        project.task_starting_extra_18 = request.POST.get('task_starting_extra_18')
+        project.task_ending_extra_18 = request.POST.get('task_ending_extra_18')
+
+        project.task_name_extra_19 = request.POST.get('task_name_extra_19')
+        project.task_duration_extra_19 = request.POST.get('task_duration_extra_19')
+        project.task_starting_extra_19 = request.POST.get('task_starting_extra_19')
+        project.task_ending_extra_19 = request.POST.get('task_ending_extra_19')
+
+        project.task_name_extra_20 = request.POST.get('task_name_extra_20')
+        project.task_duration_extra_20 = request.POST.get('task_duration_extra_20')
+        project.task_starting_extra_20 = request.POST.get('task_starting_extra_20')
+        project.task_ending_extra_20 = request.POST.get('task_ending_extra_20')
+
+        project.task_name_extra_21 = request.POST.get('task_name_extra_21')
+        project.task_duration_extra_21 = request.POST.get('task_duration_extra_21')
+        project.task_starting_extra_21 = request.POST.get('task_starting_extra_21')
+        project.task_ending_extra_21 = request.POST.get('task_ending_extra_21')
+
+        project.task_name_extra_22 = request.POST.get('task_name_extra_22')
+        project.task_duration_extra_22 = request.POST.get('task_duration_extra_22')
+        project.task_starting_extra_22 = request.POST.get('task_starting_extra_22')
+        project.task_ending_extra_22 = request.POST.get('task_ending_extra_22')
+
+
+        
 
         # Risk
         project.first_risk_name = request.POST.get("first_risk_name")
@@ -174,6 +372,25 @@ def modify_employee_projects_view(request, id):
         project.third_risk_date = request.POST.get("third_risk_date")
         project.third_risk_sevirity = request.POST.get("third_risk_sevirity")
         project.third_risk_mitigation = request.POST.get("third_risk_mitigation")
+
+
+        project.risk_name_1 = request.POST.get("risk_name_1")
+        project.risk_summary_1 = request.POST.get("risk_summary_1")
+        project.risk_date_1 = request.POST.get("risk_date_1")
+        project.risk_sevirity_1 = request.POST.get("risk_sevirity_1")
+        project.risk_mitigation_1 = request.POST.get("risk_mitigation_1")
+
+        project.risk_name_2 = request.POST.get("risk_name_2")
+        project.risk_summary_2 = request.POST.get("risk_summary_2")
+        project.risk_date_2 = request.POST.get("risk_date_2")
+        project.risk_sevirity_2 = request.POST.get("risk_sevirity_2")
+        project.risk_mitigation_2 = request.POST.get("risk_mitigation_2")
+
+        project.risk_name_3 = request.POST.get("risk_name_3")
+        project.risk_summary_3 = request.POST.get("risk_summary_3")
+        project.risk_date_3 = request.POST.get("risk_date_3")
+        project.risk_sevirity_3 = request.POST.get("risk_sevirity_3")
+        project.risk_mitigation_3 = request.POST.get("risk_mitigation_3")
 
 
 
@@ -196,10 +413,60 @@ def modify_employee_projects_view(request, id):
         project.stack_fourth_role = request.POST.get("stack_fourth_role")
 
 
+        project.stack_name_extra_1 = request.POST.get("stack_name_extra_1")
+        project.stack_department_extra_1 = request.POST.get("stack_department_extra_1")
+        project.stack_role_extra_1 = request.POST.get("stack_role_extra_1")
+
+        project.stack_name_extra_2 = request.POST.get("stack_name_extra_2")
+        project.stack_department_extra_2 = request.POST.get("stack_department_extra_2")
+        project.stack_role_extra_2 = request.POST.get("stack_role_extra_2")
+
+        project.stack_name_extra_3 = request.POST.get("stack_name_extra_3")
+        project.stack_department_extra_3 = request.POST.get("stack_department_extra_3")
+        project.stack_role_extra_3 = request.POST.get("stack_role_extra_3")
+
+        project.stack_name_extra_4 = request.POST.get("stack_name_extra_4")
+        project.stack_department_extra_4 = request.POST.get("stack_department_extra_4")
+        project.stack_role_extra_4 = request.POST.get("stack_role_extra_4")
+
+        project.stack_name_extra_5 = request.POST.get("stack_name_extra_5")
+        project.stack_department_extra_5 = request.POST.get("stack_department_extra_5")
+        project.stack_role_extra_5 = request.POST.get("stack_role_extra_5")
+
+        # Governance
+        project.c_plan = request.POST.get("c_plan")
+        project.ms_project = request.POST.get("ms_project")
+        project.project_report = request.POST.get("project_report")
+
+
+        # Sig fields
+        project.business_name = request.POST.get("business_name")
+        project.it_project_manager = request.POST.get("it_project_manager")
+        project.it_service_owner_manager = request.POST.get("it_service_owner_manager")
+        project.it_business_partener = request.POST.get("it_business_partener")
+        project.it_pmo_manager = request.POST.get("it_pmo_manager")
+
+        # Update signature files only if new ones are uploaded
+        if request.FILES.get("business_sig"):
+            project.business_sig = request.FILES["business_sig"]
+        if request.FILES.get("it_project_manager_sig"):
+            project.it_project_manager_sig = request.FILES["it_project_manager_sig"]
+        if request.FILES.get("it_service_owner_manager_sig"):
+            project.it_service_owner_manager_sig = request.FILES["it_service_owner_manager_sig"]
+        if request.FILES.get("it_business_partener_sig"):
+            project.it_business_partener_sig = request.FILES["it_business_partener_sig"]
+        if request.FILES.get("it_pmo_manager_sig"):
+            project.it_pmo_manager_sig = request.FILES["it_pmo_manager_sig"]
+
+        
+
+
         # Save the project
         project.full_clean()
         project.save()
         return redirect('employee-projects')  # or wherever you want
+    
+
 
     return render(request, 'employeeModify.html', {'project': project})
 

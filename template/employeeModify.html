@@ -20,7 +20,7 @@
 <div class="container">
     <h2>Project Charter</h2>
 
-    <form id="projectForm" method="POST">
+    <form id="projectForm" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
 
@@ -197,6 +197,96 @@
                 
             </div>
 
+
+            <div class="extra-container">
+             <p>Do you want to add more deliverables?</p>
+             <button class="extra-button" type="button" onclick="toggleExtraDeliverables()">Add More</button>
+           </div>
+
+
+            <div id="extra-deliverables" style="display: none;">
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_1" value="{{project.dev_extra_name_1}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_1" value="{{project.dev_extra_date_1|date:'Y-m-d'}}">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_2" value="{{project.dev_extra_name_2}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_2" value="{{project.dev_extra_date_2|date:'Y-m-d'}}">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_3" value="{{project.dev_extra_name_3}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_3" value="{{project.dev_extra_date_3|date:'Y-m-d'}}">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_4" value="{{project.dev_extra_name_4}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_4" value="{{project.dev_extra_date_4|date:'Y-m-d'}}">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_5" value="{{project.dev_extra_name_5}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_5" value="{{project.dev_extra_date_5|date:'Y-m-d'}}">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_6" value="{{project.dev_extra_name_6}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_6" value="{{project.dev_extra_date_6|date:'Y-m-d'}}">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_7" value="{{project.dev_extra_name_7}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_7" value="{{project.dev_extra_date_7|date:'Y-m-d'}}">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_8" value="{{project.dev_extra_name_8}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_8" value="{{project.dev_extra_date_8|date:'Y-m-d'}}">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_9" value="{{project.dev_extra_name_9}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_9" value="{{project.dev_extra_date_9|date:'Y-m-d'}}">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_10" value="{{project.dev_extra_name_10}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_10" value="{{project.dev_extra_date_10|date:'Y-m-d'}}">
+                    </div>
+                </div>
+            </div>
+
     
             <div class="button-section">
                 <button type="button" class="prev-step">Previous</button>
@@ -263,6 +353,365 @@
                         <input type="date" name="third_task_ending" value="{{project.third_task_ending|date:'Y-m-d'}}">
                     </div>
                 </div>
+            </div>
+
+
+            <div class="extra-container">
+                <p>Do you want to add more tasks?</p>
+                <button class="extra-button" type="button" onclick="toggleTaskDeliverables()">Add More</button>
+            </div>
+
+            <div id="extra-task" style="display: none;">
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_1" value="{{project.task_name_extra_1}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_1" value="{{project.task_duration_extra_1}}">
+                    </div>
+                    
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_1" value="{{project.task_starting_extra_1|date:'Y-m-d'}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_1" value="{{project.task_ending_extra_1|date:'Y-m-d'}}">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_2" value="{{project.task_name_extra_2}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_2" value="{{project.task_duration_extra_2}}">
+                    </div>
+                    
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_2" value="{{project.task_starting_extra_2|date:'Y-m-d'}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_2" value="{{project.task_ending_extra_2|date:'Y-m-d'}}">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_3" value="{{ project.task_name_extra_3 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_3" value="{{ project.task_duration_extra_3 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_3" value="{{ project.task_starting_extra_3|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_3" value="{{ project.task_ending_extra_3|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_4" value="{{ project.task_name_extra_4 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_4" value="{{ project.task_duration_extra_4 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_4" value="{{ project.task_starting_extra_4|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_4" value="{{ project.task_ending_extra_4|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_5" value="{{ project.task_name_extra_5 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_5" value="{{ project.task_duration_extra_5 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_5" value="{{ project.task_starting_extra_5|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_5" value="{{ project.task_ending_extra_5|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_6" value="{{ project.task_name_extra_6 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_6" value="{{ project.task_duration_extra_6 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_6" value="{{ project.task_starting_extra_6|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_6" value="{{ project.task_ending_extra_6|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_7" value="{{ project.task_name_extra_7 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_7" value="{{ project.task_duration_extra_7 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_7" value="{{ project.task_starting_extra_7|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_7" value="{{ project.task_ending_extra_7|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_8" value="{{ project.task_name_extra_8 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_8" value="{{ project.task_duration_extra_8 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_8" value="{{ project.task_starting_extra_8|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_8" value="{{ project.task_ending_extra_8|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_9" value="{{ project.task_name_extra_9 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_9" value="{{ project.task_duration_extra_9 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_9" value="{{ project.task_starting_extra_9|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_9" value="{{ project.task_ending_extra_9|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_10" value="{{ project.task_name_extra_10 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_10" value="{{ project.task_duration_extra_10 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_10" value="{{ project.task_starting_extra_10|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_10" value="{{ project.task_ending_extra_10|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- task 11 -->
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_11" value="{{ project.task_name_extra_11 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_11" value="{{ project.task_duration_extra_11 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_11" value="{{ project.task_starting_extra_11|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_11" value="{{ project.task_ending_extra_11|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <!-- task 12 -->
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_12" value="{{ project.task_name_extra_12 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_12" value="{{ project.task_duration_extra_12 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_12" value="{{ project.task_starting_extra_12|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_12" value="{{ project.task_ending_extra_12|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <!-- task 13 -->
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_13" value="{{ project.task_name_extra_13 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_13" value="{{ project.task_duration_extra_13 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_13" value="{{ project.task_starting_extra_13|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_13" value="{{ project.task_ending_extra_13|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <!-- task 14 -->
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_14" value="{{ project.task_name_extra_14 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_14" value="{{ project.task_duration_extra_14 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_14" value="{{ project.task_starting_extra_14|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_14" value="{{ project.task_ending_extra_14|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <!-- task 15 -->
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_15" value="{{ project.task_name_extra_15 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_15" value="{{ project.task_duration_extra_15 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_15" value="{{ project.task_starting_extra_15|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_15" value="{{ project.task_ending_extra_15|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <!-- task 16 -->
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_16" value="{{ project.task_name_extra_16 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_16" value="{{ project.task_duration_extra_16 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_16" value="{{ project.task_starting_extra_16|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_16" value="{{ project.task_ending_extra_16|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <!-- task 17 -->
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_17" value="{{ project.task_name_extra_17 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_17" value="{{ project.task_duration_extra_17 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_17" value="{{ project.task_starting_extra_17|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_17" value="{{ project.task_ending_extra_17|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <!-- task 18 -->
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_18" value="{{ project.task_name_extra_18 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_18" value="{{ project.task_duration_extra_18 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_18" value="{{ project.task_starting_extra_18|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_18" value="{{ project.task_ending_extra_18|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <!-- task 19 -->
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_19" value="{{ project.task_name_extra_19 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_19" value="{{ project.task_duration_extra_19 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_19" value="{{ project.task_starting_extra_19|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_19" value="{{ project.task_ending_extra_19|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <!-- task 20 -->
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_20" value="{{ project.task_name_extra_20 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_20" value="{{ project.task_duration_extra_20 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_20" value="{{ project.task_starting_extra_20|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_20" value="{{ project.task_ending_extra_20|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <!-- task 21 -->
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_21" value="{{ project.task_name_extra_21 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_21" value="{{ project.task_duration_extra_21 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_21" value="{{ project.task_starting_extra_21|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_21" value="{{ project.task_ending_extra_21|date:'Y-m-d' }}">
+                    </div>
+                </div>
+
+                <!-- task 22 -->
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_22" value="{{ project.task_name_extra_22 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_22" value="{{ project.task_duration_extra_22 }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_22" value="{{ project.task_starting_extra_22|date:'Y-m-d' }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_22" value="{{ project.task_ending_extra_22|date:'Y-m-d' }}">
+                    </div>
+                </div>
+                                
             </div>
 
     
@@ -343,6 +792,68 @@
             </div>
 
             <input type="hidden" name="final_submit" value="true">
+
+            <div class="extra-container">
+                <p>Do you want to add more fields</p>
+                <button class="extra-button" type="button" onclick="toggleRiskkDeliverables()">Add More</button>
+            </div>
+
+            <div id="extra-risk" style="display: none;">
+                    <div class="dev-row">
+                        <div class="input-field item">
+                            <input type="text" name="risk_name_1" value="{{project.risk_name_1}}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="text" name="risk_summary_1" value="{{project.risk_summary_1}}">
+                        </div>
+                        
+                        <div class="input-field date">
+                            <input type="date" name="risk_date_1" value="{{project.risk_date_1|date:'Y-m-d'}}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="text" name="risk_sevirity_1" value="{{project.risk_sevirity_1}}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="text" name="risk_mitigation_1" value="{{project.risk_mitigation_1}}">
+                        </div>
+                    </div>
+                    <div class="dev-row">
+                        <div class="input-field item">
+                            <input type="text" name="risk_name_2" value="{{project.risk_name_2}}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="text" name="risk_summary_2" value="{{project.risk_summary_2}}">
+                        </div>
+                        
+                        <div class="input-field date">
+                            <input type="date" name="risk_date_2" value="{{project.risk_date_2|date:'Y-m-d'}}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="text" name="risk_sevirity_2" value="{{project.risk_sevirity_2}}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="text" name="risk_mitigation_2" value="{{project.risk_mitigation_2}}">
+                        </div>
+                    </div>
+                    <div class="dev-row">
+                        <div class="input-field item">
+                            <input type="text" name="risk_name_3" value="{{project.risk_name_3}}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="text" name="risk_summary_3" value="{{project.risk_summary_3}}">
+                        </div>
+                        
+                        <div class="input-field date">
+                            <input type="date" name="risk_date_3" value="{{project.risk_date_3|date:'Y-m-d'}}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="text" name="risk_sevirity_3" value="{{project.risk_sevirity_3}}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="text" name="risk_mitigation_3" value="{{project.risk_mitigation_3}}">
+                        </div>
+                    </div>
+            </div>
     
             <div class="button-section">
                 <button type="button" class="prev-step">Previous</button>
@@ -410,6 +921,76 @@
                 
             </div>
 
+            <div class="extra-container">
+                <p>Do you want to add more fields</p>
+                <button class="extra-button" type="button" onclick="toggleStackDeliverables()">Add More</button>
+            </div>
+
+            <div id="extra-stack" style="display: none;">
+                
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="stack_name_extra_1" value="{{project.stack_name_extra_1}}">
+                    </div>
+                    <div class="input-field item">
+                        <input type="text" name="stack_department_extra_1" value="{{project.stack_department_extra_1}}">
+                    </div>
+                    <div class="input-field item">
+                        <input type="text" name="stack_role_extra_1" value="{{project.stack_role_extra_1}}">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="stack_name_extra_2" value="{{project.stack_name_extra_2}}">
+                    </div>
+                    <div class="input-field item">
+                        <input type="text" name="stack_department_extra_2" value="{{project.stack_department_extra_2}}">
+                    </div>
+                    <div class="input-field item">
+                        <input type="text" name="stack_role_extra_2" value="{{project.stack_role_extra_2}}">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="stack_name_extra_3" value="{{project.stack_name_extra_3}}">
+                    </div>
+                    <div class="input-field item">
+                        <input type="text" name="stack_department_extra_3" value="{{project.stack_department_extra_3}}">
+                    </div>
+                    <div class="input-field item">
+                        <input type="text" name="stack_role_extra_3" value="{{project.stack_role_extra_3}}">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="stack_name_extra_4" value="{{project.stack_name_extra_4}}">
+                    </div>
+                    <div class="input-field item">
+                        <input type="text" name="stack_department_extra_4" value="{{project.stack_department_extra_4}}">
+                    </div>
+                    <div class="input-field item">
+                        <input type="text" name="stack_role_extra_4" value="{{project.stack_role_extra_4}}">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="stack_name_extra_5" value="{{project.stack_name_extra_5}}">
+                    </div>
+                    <div class="input-field item">
+                        <input type="text" name="stack_department_extra_5" value="{{project.stack_department_extra_5}}">
+                    </div>
+                    <div class="input-field item">
+                        <input type="text" name="stack_role_extra_5" value="{{project.stack_role_extra_5}}">
+                    </div>
+                </div>
+                    
+            </div>
+
     
             <div class="button-section">
                 <button type="button" class="prev-step">Previous</button>
@@ -424,9 +1005,15 @@
             
             <div>
                 <div class="dev-row-row">
+                   
                     <div class="input-field-row">
                         <label>Communication plan</label>
-                        <input type="text" name="c_plan" value="{{project.c_plan}}">
+                        <select name="c_plan">
+                            <option value="">Select a plan</option>
+                            <option value="weekly" {% if project.c_plan == "weekly" %}selected{% endif %}>Weekly</option>
+                            <option value="biweekly" {% if project.c_plan == "biweekly" %}selected{% endif %}>Biweekly</option>
+                            <option value="monthly" {% if project.c_plan == "monthly" %}selected{% endif %}>Monthly</option>
+                        </select>
                     </div>
                     <div class="input-field-row">
                         <label>MS Project online</label>
@@ -455,31 +1042,44 @@
                     <div class="input-field-approval">
                         <label>Business Owner/Rep/PM</label>
                         <input type="text" name="business_name" placeholder="name" value="{{project.business_name}}">
-                        <input type="text" name="business_sig" placeholder="e-Signature" value="{{project.business_sig}}">
+                        <input type="file" name="business_sig">
+                        {% if project.business_sig %}
+                            <a class="view-existing" href="{{ project.business_sig.url }}" target="_blank">View Existing</a>
+                        {% endif %}
                     </div>
                     <div class="input-field-approval">
                         <label>IT Project Manager</label>
-                        <input type="text" name="it_project_name" placeholder="name"  value="{{project.it_project_name}}">
-                        <input type="text" name="it_project_sig" placeholder="e-Signature" value="{{project.it_project_sig}}">
+                        <input type="text" name="it_project_manager" placeholder="name" value="{{project.it_project_manager}}">
+                        <input type="file" name="it_project_manager_sig">
+                        {% if project.it_project_manager_sig %}
+                            <a class="view-existing" href="{{ project.it_project_manager_sig.url }}" target="_blank">View Existing</a>
+                        {% endif %}
                     </div>
                     <div class="input-field-approval">
                         <label>IT Service Owner Manager</label>
-                        <input type="text" name="it_service_name" placeholder="name"  value="{{project.it_service_name}}">
-                        <input type="text" name="it_service_sig" placeholder="e-Signature" value="{{project.it_service_sig}}">
+                        <input type="text" name="it_service_owner_manager" placeholder="name" value="{{project.it_service_owner_manager}}">
+                        <input type="file" name="it_service_owner_manager_sig">
+                        {% if project.it_service_owner_manager_sig %}
+                            <a class="view-existing" href="{{ project.it_service_owner_manager_sig.url }}" target="_blank">View Existing</a>
+                        {% endif %}
                     </div>
                     <div class="input-field-approval">
                         <label>IT Business Partner</label>
-                        <input type="text" name="it_business_name" placeholder="name" value="{{project.it_business_name}}">
-                        <input type="text" name="it_business_sig" placeholder="e-Signature" value="{{project.it_business_sig}}">
+                        <input type="text" name="it_business_partener" placeholder="name" value="{{project.it_business_partener}}">
+                        <input type="file" name="it_business_partener_sig">
+                        {% if project.it_business_partener_sig %}
+                            <a class="view-existing" href="{{ project.it_business_partener_sig.url }}" target="_blank">View Existing</a>
+                        {% endif %}
                     </div>
                     <div class="input-field-approval">
                         <label>IT PMO Manager</label>
-                        <input type="text" name="it_pmo_name" placeholder="name" value="{{project.it_pmo_name}}">
-                        <input type="text" name="it_pmo_sig" placeholder="e-Signature" value="{{project.it_pmo_sig}}">
+                         <input type="text" name="it_pmo_manager" placeholder="name" value="{{project.it_pmo_manager}}">
+                        <input type="file" name="it_pmo_manager_sig">
+                        {% if project.it_pmo_manager_sig %}
+                            <a class="view-existing" href="{{ project.it_pmo_manager_sig.url }}" target="_blank">View Existing</a>
+                        {% endif %}
                     </div>
                 </div>
-            </div>
-
     
             <input type="hidden" name="final_submit" value="true">
     

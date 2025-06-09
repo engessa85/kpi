@@ -44,6 +44,38 @@ class ProjectForm(models.Model):
     dev_sixth_name = models.CharField(max_length=255, blank=True, null=True)
     dev_sixth_date = models.DateField(blank=True, null=True)
 
+    # Extra Delivrabels
+
+    dev_extra_name_1 = models.CharField(max_length=255, blank=True, null=True)
+    dev_extra_date_1 = models.DateField(blank=True, null=True)
+
+    dev_extra_name_2 = models.CharField(max_length=255, blank=True, null=True)
+    dev_extra_date_2 = models.DateField(blank=True, null=True)
+
+    dev_extra_name_3 = models.CharField(max_length=255, blank=True, null=True)
+    dev_extra_date_3 = models.DateField(blank=True, null=True)
+
+    dev_extra_name_4 = models.CharField(max_length=255, blank=True, null=True)
+    dev_extra_date_4 = models.DateField(blank=True, null=True)
+
+    dev_extra_name_5 = models.CharField(max_length=255, blank=True, null=True)
+    dev_extra_date_5 = models.DateField(blank=True, null=True)
+
+    dev_extra_name_6 = models.CharField(max_length=255, blank=True, null=True)
+    dev_extra_date_6 = models.DateField(blank=True, null=True)
+
+    dev_extra_name_7 = models.CharField(max_length=255, blank=True, null=True)
+    dev_extra_date_7 = models.DateField(blank=True, null=True)
+
+    dev_extra_name_8 = models.CharField(max_length=255, blank=True, null=True)
+    dev_extra_date_8 = models.DateField(blank=True, null=True)
+
+    dev_extra_name_9 = models.CharField(max_length=255, blank=True, null=True)
+    dev_extra_date_9 = models.DateField(blank=True, null=True)
+
+    dev_extra_name_10 = models.CharField(max_length=255, blank=True, null=True)
+    dev_extra_date_10 = models.DateField(blank=True, null=True)
+
     # Initial Project Plan
 
     first_task_name = models.CharField(max_length=255, blank=True, null=True)
@@ -60,6 +92,120 @@ class ProjectForm(models.Model):
     third_task_duration = models.CharField(max_length=50, blank=True, null=True)
     third_task_starting = models.DateField(blank=True, null=True)
     third_task_ending = models.DateField(blank=True, null=True)
+
+     # Extra Task
+
+    task_name_extra_1 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_1 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_1 = models.DateField(blank=True, null=True)
+    task_ending_extra_1 = models.DateField(blank=True, null=True)
+
+    task_name_extra_2 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_2 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_2 = models.DateField(blank=True, null=True)
+    task_ending_extra_2 = models.DateField(blank=True, null=True)
+
+    task_name_extra_3 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_3 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_3 = models.DateField(blank=True, null=True)
+    task_ending_extra_3 = models.DateField(blank=True, null=True)
+
+    task_name_extra_4 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_4 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_4 = models.DateField(blank=True, null=True)
+    task_ending_extra_4 = models.DateField(blank=True, null=True)
+
+    task_name_extra_5 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_5 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_5 = models.DateField(blank=True, null=True)
+    task_ending_extra_5 = models.DateField(blank=True, null=True)
+
+    task_name_extra_6 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_6 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_6 = models.DateField(blank=True, null=True)
+    task_ending_extra_6 = models.DateField(blank=True, null=True)
+
+    task_name_extra_7 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_7 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_7 = models.DateField(blank=True, null=True)
+    task_ending_extra_7 = models.DateField(blank=True, null=True)
+
+    task_name_extra_8 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_8 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_8 = models.DateField(blank=True, null=True)
+    task_ending_extra_8 = models.DateField(blank=True, null=True)
+
+    task_name_extra_9 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_9 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_9 = models.DateField(blank=True, null=True)
+    task_ending_extra_9 = models.DateField(blank=True, null=True)
+
+    task_name_extra_10 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_10 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_10 = models.DateField(blank=True, null=True)
+    task_ending_extra_10 = models.DateField(blank=True, null=True)
+
+    task_name_extra_11 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_11 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_11 = models.DateField(blank=True, null=True)
+    task_ending_extra_11 = models.DateField(blank=True, null=True)
+
+    task_name_extra_12 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_12 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_12 = models.DateField(blank=True, null=True)
+    task_ending_extra_12 = models.DateField(blank=True, null=True)
+
+    task_name_extra_13 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_13 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_13 = models.DateField(blank=True, null=True)
+    task_ending_extra_13 = models.DateField(blank=True, null=True)
+
+    task_name_extra_14 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_14 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_14 = models.DateField(blank=True, null=True)
+    task_ending_extra_14 = models.DateField(blank=True, null=True)
+
+    task_name_extra_15 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_15 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_15 = models.DateField(blank=True, null=True)
+    task_ending_extra_15 = models.DateField(blank=True, null=True)
+
+    task_name_extra_16 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_16 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_16 = models.DateField(blank=True, null=True)
+    task_ending_extra_16 = models.DateField(blank=True, null=True)
+
+    task_name_extra_17 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_17 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_17 = models.DateField(blank=True, null=True)
+    task_ending_extra_17 = models.DateField(blank=True, null=True)
+
+    task_name_extra_18 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_18 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_18 = models.DateField(blank=True, null=True)
+    task_ending_extra_18 = models.DateField(blank=True, null=True)
+
+    task_name_extra_19 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_19 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_19 = models.DateField(blank=True, null=True)
+    task_ending_extra_19 = models.DateField(blank=True, null=True)
+
+    task_name_extra_20 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_20 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_20 = models.DateField(blank=True, null=True)
+    task_ending_extra_20 = models.DateField(blank=True, null=True)
+
+    task_name_extra_21 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_21 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_21 = models.DateField(blank=True, null=True)
+    task_ending_extra_21 = models.DateField(blank=True, null=True)
+
+    task_name_extra_22 = models.CharField(max_length=255, blank=True, null=True)
+    task_duration_extra_22 = models.CharField(max_length=50, blank=True, null=True)
+    task_starting_extra_22 = models.DateField(blank=True, null=True)
+    task_ending_extra_22 = models.DateField(blank=True, null=True)
+
+    
 
 
     # Risks & Issues
@@ -85,6 +231,27 @@ class ProjectForm(models.Model):
 
 
 
+    risk_name_1 = models.CharField(max_length=255, blank=True, null=True)
+    risk_summary_1 = models.TextField(blank=True, null=True)
+    risk_date_1 = models.DateField(blank=True, null=True)
+    risk_sevirity_1 = models.CharField(max_length=255, blank=True, null=True)
+    risk_mitigation_1 = models.TextField(blank=True, null=True)
+
+    risk_name_2 = models.CharField(max_length=255, blank=True, null=True)
+    risk_summary_2 = models.TextField(blank=True, null=True)
+    risk_date_2 = models.DateField(blank=True, null=True)
+    risk_sevirity_2 = models.CharField(max_length=255, blank=True, null=True)
+    risk_mitigation_2 = models.TextField(blank=True, null=True)
+
+
+    risk_name_3 = models.CharField(max_length=255, blank=True, null=True)
+    risk_summary_3 = models.TextField(blank=True, null=True)
+    risk_date_3 = models.DateField(blank=True, null=True)
+    risk_sevirity_3 = models.CharField(max_length=255, blank=True, null=True)
+    risk_mitigation_3 = models.TextField(blank=True, null=True)
+
+
+
     # Stakeholders
 
     stack_first_name = models.CharField(max_length=255, blank=True, null=True)
@@ -104,27 +271,64 @@ class ProjectForm(models.Model):
     stack_fourth_role = models.CharField(max_length=255, blank=True, null=True)
 
 
+    stack_name_extra_1 = models.CharField(max_length=255, blank=True, null=True)
+    stack_department_extra_1 = models.CharField(max_length=255, blank=True, null=True)
+    stack_role_extra_1 = models.CharField(max_length=255, blank=True, null=True)
+
+    stack_name_extra_2 = models.CharField(max_length=255, blank=True, null=True)
+    stack_department_extra_2 = models.CharField(max_length=255, blank=True, null=True)
+    stack_role_extra_2 = models.CharField(max_length=255, blank=True, null=True)
+
+    stack_name_extra_3 = models.CharField(max_length=255, blank=True, null=True)
+    stack_department_extra_3 = models.CharField(max_length=255, blank=True, null=True)
+    stack_role_extra_3 = models.CharField(max_length=255, blank=True, null=True)
+
+    stack_name_extra_4 = models.CharField(max_length=255, blank=True, null=True)
+    stack_department_extra_4 = models.CharField(max_length=255, blank=True, null=True)
+    stack_role_extra_4 = models.CharField(max_length=255, blank=True, null=True)
+
+    stack_name_extra_5 = models.CharField(max_length=255, blank=True, null=True)
+    stack_department_extra_5 = models.CharField(max_length=255, blank=True, null=True)
+    stack_role_extra_5 = models.CharField(max_length=255, blank=True, null=True)
+
+
     # Governance
-    c_plan = models.CharField(max_length=255, blank=True, null=True)
+    PLAN_CHOICES = [
+        ('weekly', 'Weekly'),
+        ('biweekly', 'Biweekly'),
+        ('monthly', 'Monthly'),
+    ]
+
+    c_plan = models.CharField(
+        max_length=255,
+        choices=PLAN_CHOICES,
+        blank=True,
+        null=True
+    )
     ms_project = models.CharField(max_length=255, blank=True, null=True)
     project_report = models.CharField(max_length=255, blank=True, null=True)
 
 
     # Approvals
     business_name = models.CharField(max_length=255, blank=True, null=True)
-    business_sig = models.CharField(max_length=255, blank=True, null=True)
+    business_sig = models.FileField(upload_to='signatures/', blank=True, null=True)
 
-    it_project_name = models.CharField(max_length=255, blank=True, null=True)
-    it_project_sig = models.CharField(max_length=255, blank=True, null=True)
+    it_project_manager = models.CharField(max_length=255, blank=True, null=True)
+    it_project_manager_sig = models.FileField(upload_to='signatures/', blank=True, null=True)
 
-    it_service_name = models.CharField(max_length=255, blank=True, null=True)
-    it_service_sig = models.CharField(max_length=255, blank=True, null=True)
+    it_service_owner_manager = models.CharField(max_length=255, blank=True, null=True)
+    it_service_owner_manager_sig = models.FileField(upload_to='signatures/', blank=True, null=True)
 
-    it_business_name = models.CharField(max_length=255, blank=True, null=True)
-    it_business_sig = models.CharField(max_length=255, blank=True, null=True)
+    it_business_partener = models.CharField(max_length=255, blank=True, null=True)
+    it_business_partener_sig = models.FileField(upload_to='signatures/', blank=True, null=True)
 
-    it_pmo_name = models.CharField(max_length=255, blank=True, null=True)
-    it_pmo_sig = models.CharField(max_length=255, blank=True, null=True)
+    it_pmo_manager = models.CharField(max_length=255, blank=True, null=True)
+    it_pmo_manager_sig = models.FileField(upload_to='signatures/', blank=True, null=True)
+
+
+
+
+    
 
     
 
@@ -199,17 +403,17 @@ class ProjectForm(models.Model):
         "business_name":1.2,
         "business_sig":1.2,
 
-        "it_project_name":1.2,
-        "it_project_sig":1.2,
+        "it_project_manager":1.2,
+        "it_project_manager_sig":1.2,
 
-        "it_service_name":1.2,
-        "it_service_sig":1.2,
+        "it_service_owner_manager":1.2,
+        "it_service_owner_manager_sig":1.2,
 
-        "it_business_name":1.2,
-        "it_business_sig":1.2,
+        "it_business_partener":1.2,
+        "it_business_partener_sig":1.2,
 
-        "it_pmo_name":1.2,
-        "it_pmo_sig":1.2,
+        "it_pmo_manager":1.2,
+        "it_pmo_manager_sig":1.2,
 
 
     }
@@ -238,6 +442,13 @@ class ProjectForm(models.Model):
             value = getattr(self, field.name)
             if isinstance(field, models.DateField) and value == "":
                 setattr(self, field.name, None)
+
+        
+        for field in self._meta.fields:
+            value = getattr(self, field.name)
+            if isinstance(field, models.CharField) and value is None:
+                setattr(self, field.name, '')
+
         super().save(*args, **kwargs)
 
   

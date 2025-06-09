@@ -20,7 +20,7 @@
 <div class="container">
     <h2>Project Charter</h2>
 
-    <form id="projectForm" method="POST">
+    <form id="projectForm" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
 
@@ -192,6 +192,98 @@
                 
             </div>
 
+
+           <div class="extra-container">
+             <p>Do you want to add more deliverables?</p>
+             <button class="extra-button" type="button" onclick="toggleExtraDeliverables()">Add More</button>
+           </div>
+
+
+            <div id="extra-deliverables" style="display: none;">
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_1">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_1">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_2">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_2">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_3">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_3">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_4">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_4">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_5">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_5">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_6">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_6">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_7">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_7">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_8">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_8">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_9">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_9">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="dev_extra_name_10">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="dev_extra_date_10">
+                    </div>
+                </div>
+            </div>
+
+           
+
     
             <div class="button-section">
                 <button type="button" class="prev-step">Previous</button>
@@ -258,6 +350,30 @@
                         <input type="date" name="third_task_ending">
                     </div>
                 </div>
+            </div>
+
+             <div class="extra-container">
+                <p>Do you want to add more tasks?</p>
+                <button class="extra-button" type="button" onclick="toggleTaskDeliverables()">Add More</button>
+            </div>
+
+            <div id="extra-task" style="display: none;">
+                {% for i in extra_tasks_range %}
+                    <div class="dev-row">
+                        <div class="input-field item">
+                            <input type="text" name="task_name_extra_{{ i }}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="text" name="task_duration_extra_{{ i }}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="date" name="task_starting_extra_{{ i }}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="date" name="task_ending_extra_{{ i }}">
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
 
     
@@ -337,6 +453,36 @@
 
             </div>
 
+            <div class="extra-container">
+                <p>Do you want to add more fields</p>
+                <button class="extra-button" type="button" onclick="toggleRiskkDeliverables()">Add More</button>
+            </div>
+
+            <div id="extra-risk" style="display: none;">
+                {% for i in extra_risks_range %}
+                    <div class="dev-row">
+                        <div class="input-field item">
+                            <input type="text" name="risk_name_{{i}}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="text" name="risk_summary_{{i}}">
+                        </div>
+                        
+                        <div class="input-field date">
+                            <input type="date" name="risk_date_{{i}}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="text" name="risk_sevirity_{{i}}">
+                        </div>
+                        <div class="input-field date">
+                            <input type="text" name="risk_mitigation_{{i}}">
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+           
+
             <input type="hidden" name="final_submit" value="true">
     
             <div class="button-section">
@@ -405,6 +551,30 @@
                 
             </div>
 
+
+            <div class="extra-container">
+                <p>Do you want to add more fields</p>
+                <button class="extra-button" type="button" onclick="toggleStackDeliverables()">Add More</button>
+            </div>
+
+            <div id="extra-stack" style="display: none;">
+                {% for i in extra_stack_range %}
+
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="stack_name_extra_{{i}}">
+                    </div>
+                    <div class="input-field item">
+                        <input type="text" name="stack_department_extra_{{i}}">
+                    </div>
+                    <div class="input-field item">
+                        <input type="text" name="stack_role_extra_{{i}}">
+                    </div>
+                </div>
+                    
+                {% endfor %}
+            </div>
+
     
             <div class="button-section">
                 <button type="button" class="prev-step">Previous</button>
@@ -419,9 +589,15 @@
             
             <div>
                 <div class="dev-row-row">
+    
                     <div class="input-field-row">
                         <label>Communication plan</label>
-                        <input type="text" name="c_plan">
+                        <select name="c_plan">
+                            <option value="">Select a plan</option>
+                            <option value="weekly" {% if project.c_plan == "weekly" %}selected{% endif %}>Weekly</option>
+                            <option value="biweekly" {% if project.c_plan == "biweekly" %}selected{% endif %}>Biweekly</option>
+                            <option value="monthly" {% if project.c_plan == "monthly" %}selected{% endif %}>Monthly</option>
+                        </select>
                     </div>
                     <div class="input-field-row">
                         <label>MS Project online</label>
@@ -450,27 +626,27 @@
                     <div class="input-field-approval">
                         <label>Business Owner/Rep/PM</label>
                         <input type="text" name="business_name" placeholder="name">
-                        <input type="text" name="business_sig" placeholder="e-Signature">
+                        <input type="file" name="business_sig">
                     </div>
                     <div class="input-field-approval">
                         <label>IT Project Manager</label>
-                        <input type="text" name="it_project_name" placeholder="name">
-                        <input type="text" name="it_project_sig" placeholder="e-Signature">
+                        <input type="text" name="it_project_manager" placeholder="name">
+                        <input type="file" name="it_project_manager_sig">
                     </div>
                     <div class="input-field-approval">
                         <label>IT Service Owner Manager</label>
-                        <input type="text" name="it_service_name" placeholder="name">
-                        <input type="text" name="it_service_sig" placeholder="e-Signature">
+                        <input type="text" name="it_service_owner_manager" placeholder="name">
+                        <input type="file" name="it_service_owner_manager_sig">
                     </div>
                     <div class="input-field-approval">
                         <label>IT Business Partner</label>
-                        <input type="text" name="it_business_name" placeholder="name">
-                        <input type="text" name="it_business_sig" placeholder="e-Signature">
+                        <input type="text" name="it_business_partener" placeholder="name">
+                        <input type="file" name="it_business_partener_sig">
                     </div>
                     <div class="input-field-approval">
                         <label>IT PMO Manager</label>
-                        <input type="text" name="it_pmo_name" placeholder="name">
-                        <input type="text" name="it_pmo_sig" placeholder="e-Signature">
+                         <input type="text" name="it_pmo_manager" placeholder="name">
+                        <input type="file" name="it_pmo_manager_sig">
                     </div>
                 </div>
             </div>

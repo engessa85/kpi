@@ -1,0 +1,288 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    width: 100%;
+    height: 60px;
+    background-color:  #a17659;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+ 
+}
+
+.head h2 {
+    margin-left: 10px;
+    color: white;
+}
+
+.head .head-items {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     gap: 20px;
+    
+}
+
+.head .head-items a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    
+    
+}
+
+
+.head .head-items a:hover{
+    opacity: 0.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+
+
+
+
+
+input, textarea {
+    width: 100%;
+    border-radius: 8px;
+    font-size: 12px;
+    outline: none;
+    border: 1px solid #ddd;
+    margin-top: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #a17659;
+    box-shadow: 0 0 5px rgba(167, 137, 40, 0.3);
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+button {
+    
+    background: #a17659;
+    color: white;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #a17659;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.input-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+
+.input-field-check {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds spacing between checkbox and label */
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.input-field-check input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+
+
+.seperator {
+    margin: 25px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+
+.button-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    gap: 10px
+}
+
+.submit-button-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.form-step {
+    display: none;
+}
+.form-step.active {
+    display: block;
+}
+
+.dev-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+/* .dev-row-row{
+    background-color: red;
+} */
+
+.dev-row .item {
+    width: 70%;
+}
+
+.dev-row .date {
+    width: 30%;
+}
+
+.input-field-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+.input-field-row input {
+    width: 80%;
+}
+
+
+.input-field-approval {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+.input-field-approval label {
+    flex: 1;
+}
+
+.input-field-approval input {
+    flex: 2;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.6s ease-out;
+}
+
+
+.alert {
+    margin-top: 5px;
+    color: rgb(249, 58, 58);
+    font-size: 12px;
+}
+
+.extra-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.extra-container p {
+    font-size: 12px;
+    color: #524d4d;
+}
+.extra-container button.extra-button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100px;
+  margin-top: -5px;
+  padding: 10px !important;
+}
+
+
+.view-existing {
+    font-size: 14px;
+    color: #a17659;
+}

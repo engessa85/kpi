@@ -15,9 +15,7 @@ venv.bak/
 *.sqlite3
 *.db
 
-# Static and media files (if they are generated locally)
-/static/
-/media/
+
 
 # IDE/editor-specific files
 .vscode/

@@ -1,0 +1,144 @@
+/* reset.css */
+
+/* Remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in element dimensions */
+}
+
+/* Set a consistent base font */
+body, html {
+    font-family: Arial, sans-serif; /* Use a generic sans-serif font */
+    font-size: 16px; /* Base font size */
+    line-height: 1.5; /* Improves readability */
+    color: #333; /* Default text color */
+    background-color: #fff; /* Default background color */
+}
+
+/* Remove list styles */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove default link styles */
+a {
+    text-decoration: none; /* No underline */
+    color: inherit; /* Inherit text color from parent */
+}
+
+/* Reset button and input styles */
+button, input, textarea, select {
+    font-family: inherit; /* Match font with the rest of the page */
+    font-size: inherit; /* Match font size */
+    padding: 0.5em; /* Add some padding for better usability */
+    border: 1px solid #ccc; /* Neutral border */
+    border-radius: 4px; /* Rounded corners for aesthetics */
+    background-color: #fff; /* Neutral background */
+    color: #333; /* Neutral text color */
+}
+
+/* Ensure images don't exceed their container */
+img {
+    max-width: 1
+}
+
+.main {
+    background-image: url('../images/landing.png'); /* Path to the image */
+    background-size: cover; /* Ensure the image covers the entire page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Make the background fixed while scrolling */
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
+}
+
+
+
+.logo-container img {
+    width: 200px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.content {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 150px;
+
+}
+
+.form-container input {
+    width: 400px;
+    font-size: 16px;
+    color: black;
+    outline-style: none;
+}
+
+.form-container input::placeholder {
+    
+    font-size: 16px;
+    color: rgb(169, 164, 164);
+  
+}
+
+.form-container button {
+    width: 400px;
+    background-color: #0096FF;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.form-container button:hover{
+    opacity: 0.6;
+}
+
+
+/* Style the messages container */
+.messages {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Style individual messages */
+.message {
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: white;
+    width:400px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+/* Style error messages */
+.message.error {
+    background-color: #ff4d4d; /* Red background for errors */
+}
+
+.message.info {
+    background-color: #4CAF50; /* Green for success/info */
+}
+
+.message.warning {
+    background-color: #FF9800; /* Orange for warnings */
+}
+
+.message.debug {
+    background-color: #2196F3; /* Blue for debug messages */
+}
+
+
+
+
+

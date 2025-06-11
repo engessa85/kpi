@@ -1,0 +1,94 @@
+/* reset.css */
+
+/* Remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in element dimensions */
+}
+
+/* Set a consistent base font */
+body, html {
+    font-family: Arial, sans-serif; /* Use a generic sans-serif font */
+    font-size: 16px; /* Base font size */
+    line-height: 1.5; /* Improves readability */
+    color: #333; /* Default text color */
+    background-color: #fff; /* Default background color */
+}
+
+/* Remove list styles */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove default link styles */
+a {
+    text-decoration: none; /* No underline */
+    color: inherit; /* Inherit text color from parent */
+}
+
+/* Reset button and input styles */
+button, input, textarea, select {
+    font-family: inherit; /* Match font with the rest of the page */
+    font-size: inherit; /* Match font size */
+    padding: 0.5em; /* Add some padding for better usability */
+    border: 1px solid #ccc; /* Neutral border */
+    border-radius: 4px; /* Rounded corners for aesthetics */
+    background-color: #fff; /* Neutral background */
+    color: #333; /* Neutral text color */
+}
+
+/* Ensure images don't exceed their container */
+img {
+    max-width: 1
+}
+
+.main {
+    background-image: url('../images/landing.png'); /* Path to the image */
+    background-size: cover; /* Ensure the image covers the entire page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Make the background fixed while scrolling */
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
+}
+
+
+
+.logo-container img {
+    width: 200px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.content {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 89.48px );
+}
+
+
+
+.manager, .employee {
+    width: 300px; /* Set a fixed width for the divs */
+    height: 300px; /* Set a fixed height for the divs */
+    display: flex; /* Center text inside the div */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    color: white; /* Text color */
+    font-size: 24px; /* Font size */
+    font-weight: bold; /* Bold text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+    
+    background-size:contain; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+.manager {
+    background-image: url('../images/manager.png'); /* Path to the manager background image */
+}
+
+.employee {
+    background-image: url('../images/enployee.png'); /* Path to the employee background image */
+}

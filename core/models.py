@@ -324,6 +324,30 @@ class ProjectForm(models.Model):
 
     it_pmo_manager = models.CharField(max_length=255, blank=True, null=True)
     it_pmo_manager_sig = models.FileField(upload_to='signatures/', blank=True, null=True)
+    
+    # Project Closure - General Information
+    cl_project_name = models.CharField(max_length=255, blank=True, null=True)
+    cl_project_manager = models.CharField(max_length=255, blank=True, null=True)
+    
+    cl_actual_start_date = models.DateField(blank=True, null=True)
+    cl_actual_finish_date = models.DateField(blank=True, null=True)
+    
+    cl_reason_status = models.CharField(max_length=255, blank=True, null=True)
+    cl_reason_status_reason = models.CharField(max_length=255, blank=True, null=True)
+    
+    # Project Closure - Actual Deliverables
+    
+    
+    cl_actual_d_1 = models.CharField(max_length=255, blank=True, null=True)
+    cl_actual_d_2 = models.CharField(max_length=255, blank=True, null=True)
+    cl_actual_d_3 = models.CharField(max_length=255, blank=True, null=True)
+    cl_actual_d_4 = models.CharField(max_length=255, blank=True, null=True)
+    cl_actual_d_5 = models.CharField(max_length=255, blank=True, null=True)
+    cl_actual_d_6 = models.CharField(max_length=255, blank=True, null=True)
+    cl_actual_d_7 = models.CharField(max_length=255, blank=True, null=True)
+    cl_actual_d_8 = models.CharField(max_length=255, blank=True, null=True)
+    cl_actual_d_9 = models.CharField(max_length=255, blank=True, null=True)
+    cl_actual_d_10 = models.CharField(max_length=255, blank=True, null=True)
 
 
 
@@ -414,9 +438,27 @@ class ProjectForm(models.Model):
 
         "it_pmo_manager":1.2,
         "it_pmo_manager_sig":1.2,
-
-
+        
+        # ##################################
+        "cl_project_name":1,
+        "cl_project_manager":1,
+        
+        "cl_actual_start_date":2,
+        "cl_actual_finish_date":2,
+        
+        "cl_reason_status":1,
+        "cl_reason_status_reason":1,
+        
+        # ##################################
+        
+        "cl_actual_d_1":1,
+        "cl_actual_d_2":1,
+        
     }
+    
+    
+    
+    
 
     def calculate_progress(self):
         """Calculate weighted progress based on filled fields."""
@@ -435,7 +477,35 @@ class ProjectForm(models.Model):
                 earned_score += score
 
         self.progress = (earned_score / total_score) * 100 if total_score > 0 else 0
+        
+        
+    
+    ## this function for checking which filed is used to caculate the percentage
+    # def calculate_progress(self):
+    #     total_score = sum(self.FIELD_WEIGHTS.values())
+    #     earned_score = 0
 
+    #     for field, score in self.FIELD_WEIGHTS.items():
+    #         value = getattr(self, field)
+    #         print(f"{field} = {value} --> ", end='')
+
+    #         if isinstance(value, bool):
+    #             if value:
+    #                 earned_score += score
+    #                 print(f"Added {score}")
+    #             else:
+    #                 print("Skipped")
+    #         elif value:
+    #             earned_score += score
+    #             print(f"Added {score}")
+    #         else:
+    #             print("Skipped")
+
+    #     self.progress = (earned_score / total_score) * 100 if total_score > 0 else 0
+    #     print(f"Final earned_score = {earned_score}, Total = {total_score}, Progress = {self.progress}")
+
+    
+    
     def save(self, *args, **kwargs):
         self.calculate_progress()
         for field in self._meta.fields:

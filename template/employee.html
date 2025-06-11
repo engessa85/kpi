@@ -18,15 +18,16 @@
     </div>
 </div>
 <div class="container">
-    <h2>Project Charter</h2>
+   
 
     <form id="projectForm" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
+        
 
 
         <!-- Project Details -->
         <div class="form-step">
-            <h3>Project Details</h3>
+           <h3>Project Charter - Project Details</h3>
             <div class="form-row">
                 <div class="input-container">
                     <div class="input-field">
@@ -136,7 +137,7 @@
 
 
         <div class="form-step">
-            <h3>Deliverables</h3>
+            <h3>Project Charter - Deliverables</h3>
             
             <div>
                 <div class="dev-row">
@@ -296,7 +297,7 @@
         <!-- Initial Project Plan -->
 
         <div class="form-step">
-            <h3>Initial Project Plan</h3>
+            <h3>Project Charter - Initial Project Plan</h3>
             
             <div>
                 <div class="dev-row">
@@ -386,7 +387,7 @@
         <!-- Risks & Issues -->
 
         <div class="form-step">
-            <h3>Risks & Issues</h3>
+            <h3>Project Charter - Risks & Issues</h3>
             
             <div>
                 <div class="dev-row">
@@ -495,7 +496,7 @@
 
 
         <div class="form-step">
-            <h3>Stakeholders</h3>
+            <h3>Project Charter - Stakeholders</h3>
             
             <div>
                 <div class="dev-row">
@@ -585,7 +586,7 @@
         <!-- Governance -->
 
         <div class="form-step">
-            <h3>Governance</h3>
+            <h3>Project Charter - Governance</h3>
             
             <div>
                 <div class="dev-row-row">
@@ -619,7 +620,7 @@
         <!-- Approvals -->
 
         <div class="form-step">
-            <h3>Approvals</h3>
+            <h3>Project Charter - Approvals</h3>
             
             <div>
                 <div class="dev-row-row">
@@ -660,9 +661,127 @@
     
             </div>
         </div>
+        
+
+        <!-- Project Closure - General Information -->
+        <div class="form-step" style="background-color: bisque; padding: 20px;">
+           <h3>Project Closure - General Information</h3>
+            <div class="form-row">
+                <div class="input-container">
+                    <div class="input-field">
+                        <label>Project Name</label>
+                        <input type="text" name="cl_project_name">
+                    </div>
+                    <div class="input-field">
+                        <label>Actual Start Date</label>
+                        <input type="date" name="cl_actual_start_date">
+                    </div>
+                </div>
+    
+                <div class="input-container">
+                    <div class="input-field">
+                        <label>Project Manager</label>
+                        <input type="text" name="cl_project_manager">
+                    </div>
+                    <div class="input-field">
+                        <label>Actual Finish Date</label>
+                        <input type="date" name="cl_actual_finish_date">
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-container-row-row">
+                <div class="row-field">
+                    <label>Reason of Closure</label>
+                    <input placeholder="Completed" type="text" name="cl_reason_status">
+                    <input style="margin-left: 10px;" placeholder="Partial completed (reason)" type="text" name="cl_reason_status_reason">
+                </div>
+                
+            </div>
+
+            <input type="hidden" name="final_submit" value="true">
+    
+            <div class="button-section">
+                <button type="button" class="prev-step">Previous</button>
+                <button type="button" class="next-step">Next</button>
+    
+            </div>
+        </div>
+
+        <!-- Actual Deliverables -->
+        <div class="form-step" style="background-color: bisque; padding: 20px;">
+            <h3>Project Closure - Actual Deliverables</h3>
+            <div>
+                <div class="dev-row">
+                    <div class="input-field item-mod">
+                        <label>Name</label>
+                        <input type="text" name="cl_actual_d_1">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item-mod">
+                        <input type="text" name="cl_actual_d_2">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item-mod">
+                        <input type="text" name="cl_actual_d_3">
+                    </div>
+                </div>
+
+                <div class="dev-row">
+                    <div class="input-field item-mod">
+                        <input type="text" name="cl_actual_d_4">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item-mod">
+                        <input type="text" name="cl_actual_d_5">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item-mod">
+                        <input type="text" name="cl_actual_d_6">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item-mod">
+                        <input type="text" name="cl_actual_d_7">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item-mod">
+                        <input type="text" name="cl_actual_d_8">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item-mod">
+                        <input type="text" name="cl_actual_d_9">
+                    </div>
+                </div>
+                <div class="dev-row">
+                    <div class="input-field item-mod">
+                        <input type="text" name="cl_actual_d_10">
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="final_submit" value="true">
+    
+            <div class="button-section">
+                <button type="button" class="prev-step">Previous</button>
+                <button type="button" class="next-step">Next</button>
+    
+            </div>
+        </div>
+
+
+
         <div class="submit-button-section">
             <button type="submit" class="next-step">Submit</button>
         </div>
+
 
 
     

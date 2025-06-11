@@ -56,38 +56,6 @@ def get_progress_employee(request):
 
 
 
-
-
-# @login_required
-# def employee_view(request):
-#     if request.method == "POST":
-#         form_data = request.session.get("form_data", {})
-
-#         form_data.update(request.POST.dict())
-#         request.session["form_data"] = form_data
-
-#         if "final_submit" in request.POST:
-#             start_date_str = form_data.get("project_start_date")
-#             finish_date_str = form_data.get("project_finish_date")
-          
-#             if finish_date_str < start_date_str:
-#                 messages.error(request, "Project finish date must be after the start date.")
-#                 return render(request, "employee.html",context={'extra_tasks_range': range(1, 23),'extra_risks_range': range(1, 4), 'extra_stack_range': range(1, 6)})
-            
-#             form = ProjectFormModel(form_data, request.FILES)
-#             if form.is_valid():
-#                 project = form.save(commit=False)
-#                 project.user = request.user  
-#                 project.full_clean()
-#                 project.save()
-#                 del request.session["form_data"]  
-#                 return redirect("employee-projects")
-
-#     return render(request, "employee.html", context={'extra_tasks_range': range(1, 23),'extra_risks_range': range(1, 4), 'extra_stack_range': range(1, 6)})
-
-
-
-
 @login_required
 def employee_view(request):
     if request.method == "POST":
@@ -457,6 +425,29 @@ def modify_employee_projects_view(request, id):
             project.it_business_partener_sig = request.FILES["it_business_partener_sig"]
         if request.FILES.get("it_pmo_manager_sig"):
             project.it_pmo_manager_sig = request.FILES["it_pmo_manager_sig"]
+        
+        # Project Closure - General Information 
+        project.cl_project_name = request.POST.get("cl_project_name")
+        project.cl_actual_start_date = request.POST.get("cl_actual_start_date")
+        
+        project.cl_project_manager = request.POST.get("cl_project_manager")
+        project.cl_actual_finish_date = request.POST.get("cl_actual_finish_date")
+        
+        project.cl_reason_status = request.POST.get("cl_reason_status")
+        project.cl_reason_status_reason = request.POST.get("cl_reason_status_reason")
+        
+        # Project Closure - Actual Deliverables
+        
+        project.cl_actual_d_1 = request.POST.get("cl_actual_d_1")
+        project.cl_actual_d_2 = request.POST.get("cl_actual_d_2")
+        project.cl_actual_d_3 = request.POST.get("cl_actual_d_3")
+        project.cl_actual_d_4 = request.POST.get("cl_actual_d_4")
+        project.cl_actual_d_5 = request.POST.get("cl_actual_d_5")
+        project.cl_actual_d_6 = request.POST.get("cl_actual_d_6")
+        project.cl_actual_d_7 = request.POST.get("cl_actual_d_7")
+        project.cl_actual_d_8 = request.POST.get("cl_actual_d_8")
+        project.cl_actual_d_9 = request.POST.get("cl_actual_d_9")
+        project.cl_actual_d_10 = request.POST.get("cl_actual_d_10")
 
         
 

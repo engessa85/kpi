@@ -448,6 +448,71 @@ def modify_employee_projects_view(request, id):
         project.cl_actual_d_8 = request.POST.get("cl_actual_d_8")
         project.cl_actual_d_9 = request.POST.get("cl_actual_d_9")
         project.cl_actual_d_10 = request.POST.get("cl_actual_d_10")
+        
+        # Project Closure - cls
+        
+        
+        project.cl_cr_name1 = request.POST.get("cl_cr_name1")
+        project.cl_cost1 = request.POST.get("cl_cost1")
+
+        project.cl_cr_name2 = request.POST.get("cl_cr_name2")
+        project.cl_cost2 = request.POST.get("cl_cost2")
+
+        project.cl_cr_name3 = request.POST.get("cl_cr_name3")
+        project.cl_cost3 = request.POST.get("cl_cost3")
+
+        project.cl_cr_name4 = request.POST.get("cl_cr_name4")
+        project.cl_cost4 = request.POST.get("cl_cost4")
+
+        project.cl_cr_name5 = request.POST.get("cl_cr_name5")
+        project.cl_cost5 = request.POST.get("cl_cost5")
+
+        project.cl_cr_name6 = request.POST.get("cl_cr_name6")
+        project.cl_cost6 = request.POST.get("cl_cost6")
+
+        project.cl_cr_name7 = request.POST.get("cl_cr_name7")
+        project.cl_cost7 = request.POST.get("cl_cost7")
+
+        project.cl_cr_name8 = request.POST.get("cl_cr_name8")
+        project.cl_cost8 = request.POST.get("cl_cost8")
+
+        project.cl_cr_name9 = request.POST.get("cl_cr_name9")
+        project.cl_cost9 = request.POST.get("cl_cost9")
+
+        project.cl_cr_name10 = request.POST.get("cl_cr_name10")
+        project.cl_cost10 = request.POST.get("cl_cost10")
+
+        project.cl_cr_name11 = request.POST.get("cl_cr_name11")
+        project.cl_cost11 = request.POST.get("cl_cost11")
+
+        project.cl_cr_name12 = request.POST.get("cl_cr_name12")
+        project.cl_cost12 = request.POST.get("cl_cost12")
+
+        project.cl_cr_name13 = request.POST.get("cl_cr_name13")
+        project.cl_cost13 = request.POST.get("cl_cost13")
+
+        project.cl_cr_name14 = request.POST.get("cl_cr_name14")
+        project.cl_cost14 = request.POST.get("cl_cost14")
+
+        project.cl_cr_name15 = request.POST.get("cl_cr_name15")
+        project.cl_cost15 = request.POST.get("cl_cost15")
+        
+        # Project Closure - Lessons Learned
+        
+        project.cl_des1 = request.POST.get("cl_des1")
+        project.cl_imp1 = request.POST.get("cl_imp1")
+        project.cl_ana1 = request.POST.get("cl_ana1")
+        project.cl_re1 = request.POST.get("cl_re1")
+        
+        project.cl_des2 = request.POST.get("cl_des2")
+        project.cl_imp2 = request.POST.get("cl_imp2")
+        project.cl_ana2 = request.POST.get("cl_ana2")
+        project.cl_re2 = request.POST.get("cl_re2")
+        
+        project.cl_des3 = request.POST.get("cl_des3")
+        project.cl_imp3 = request.POST.get("cl_imp3")
+        project.cl_ana3 = request.POST.get("cl_ana3")
+        project.cl_re3 = request.POST.get("cl_re3")
 
         
 

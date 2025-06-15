@@ -1421,20 +1421,81 @@
         </div>
 
 
+        <!-- Approvals -->
+        <div class="form-step" style="background-color: bisque; padding: 20px;">
+            <h3>Project Closure - Approvals</h3>
 
-        
-        
+            <div>
+                <div class="dev-row-row">
+                    <div class="input-field-approval">
+                        <label>Business Owner/Rep/PM</label>
+                        <input type="text" name="cl_business_name" value="{{project.cl_business_name}}">
+                        <input type="file" name="cl_business_name_sign">
+                        {% if project.cl_business_name_sign %}
+                            <a class="view-existing" href="{{ project.cl_business_name_sign.url }}" target="_blank">View Existing</a>
+                        {% endif %}
+                    </div>
+                    <div class="input-field-approval">
+                        <label>Business Sponsor</label>
+                        <input type="text" name="cl_business_sponser" value="{{project.cl_business_sponser}}">
+                        <input type="file" name="cl_business_sponser_sign">
+                        {% if project.cl_business_sponser_sign %}
+                            <a class="view-existing" href="{{ project.cl_business_sponser_sign.url }}" target="_blank">View Existing</a>
+                        {% endif %}
+                    </div>
+                    <div class="input-field-approval">
+                        <label>IT Project Manager</label>
+                        <input type="text" name="cl_it_project_manager" value="{{project.cl_it_project_manager}}">
+                        <input type="file" name="cl_it_project_manager_sig">
+                        {% if project.cl_it_project_manager_sig %}
+                            <a class="view-existing" href="{{ project.cl_it_project_manager_sig.url }}" target="_blank">View Existing</a>
+                        {% endif %}
+                    </div>
+                    <div class="input-field-approval">
+                        <label>IT Service Owner Manager</label>
+                        <input type="text" name="cl_it_service_owner_manager" value="{{project.cl_it_service_owner_manager}}">
+                        <input type="file" name="cl_it_service_owner_manager_sig">
+                        {% if project.cl_it_service_owner_manager_sig %}
+                            <a class="view-existing" href="{{ project.cl_it_service_owner_manager_sig.url }}" target="_blank">View Existing</a>
+                        {% endif %}
+                    </div>
+                    <div class="input-field-approval">
+                        <label>IT Business Partner</label>
+                        <input type="text" name="cl_it_business_partener" value="{{project.cl_it_business_partener}}">
+                        <input type="file" name="cl_it_business_partener_sig">
+                        {% if project.cl_it_business_partener_sig %}
+                            <a class="view-existing" href="{{ project.cl_it_business_partener_sig.url }}" target="_blank">View Existing</a>
+                        {% endif %}
+                    </div>
+                    <div class="input-field-approval">
+                        <label>IT Technical Delivery MGR</label>
+                         <input type="text" name="cl_it_technical_mgr" value="{{project.cl_it_technical_mgr}}">
+                        <input type="file" name="cl_it_technical_mgr_sign">
+                        {% if project.cl_it_technical_mgr_sign %}
+                            <a class="view-existing" href="{{ project.cl_it_technical_mgr_sign.url }}" target="_blank">View Existing</a>
+                        {% endif %}
+                    </div>
+                    <div class="input-field-approval">
+                        <label>IT PMO Manager</label>
+                         <input type="text" name="cl_it_pmo_manager" value="{{project.cl_it_pmo_manager}}">
+                        <input type="file" name="cl_it_pmo_manager_sig">
+                        {% if project.cl_it_pmo_manager_sig %}
+                            <a class="view-existing" href="{{ project.cl_it_pmo_manager_sig.url }}" target="_blank">View Existing</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
 
+    
+            <input type="hidden" name="final_submit" value="true">
+    
+            <div class="button-section">
+                <button type="button" class="prev-step">Previous</button>
+                <button type="button" class="next-step">Next</button>
+    
+            </div>
+        </div>
 
-        
-
-
-
-
-
-         
-
-        
         <div class="submit-button-section">
             <button type="submit" class="next-step">Submit</button>
         </div>

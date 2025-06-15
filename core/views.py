@@ -95,6 +95,24 @@ def employee_view(request):
                 # Optional: If you also want to save Business Owner/Rep/PM
                 project.business_name = request.POST.get("business_name")
                 project.business_sig = request.FILES.get("business_sig")
+                
+                # Project Closure - Approvals
+                project.cl_business_name = request.POST.get("cl_business_name")
+                project.cl_business_sponser = request.POST.get("cl_business_sponser")
+                project.cl_it_project_manager = request.POST.get("cl_it_project_manager")
+                project.cl_it_service_owner_manager = request.POST.get("cl_it_service_owner_manager")
+                project.cl_it_business_partener = request.POST.get("cl_it_business_partener")
+                project.cl_it_technical_mgr = request.POST.get("cl_it_technical_mgr")
+                project.cl_it_pmo_manager = request.POST.get("cl_it_pmo_manager")
+                
+                project.cl_business_name_sign = request.FILES.get("cl_business_name_sign")
+                project.cl_business_sponser_sign = request.FILES.get("cl_business_sponser_sign")
+                project.cl_it_project_manager_sig = request.FILES.get("cl_it_project_manager_sig")
+                project.cl_it_service_owner_manager_sig = request.FILES.get("cl_it_service_owner_manager_sig")
+                project.cl_it_business_partener_sig = request.FILES.get("cl_it_business_partener_sig")
+                project.cl_it_technical_mgr_sign = request.FILES.get("cl_it_technical_mgr_sign")
+                project.cl_it_pmo_manager_sig = request.FILES.get("cl_it_pmo_manager_sig")
+                
 
                 project.full_clean()
                 project.save()
@@ -513,10 +531,34 @@ def modify_employee_projects_view(request, id):
         project.cl_imp3 = request.POST.get("cl_imp3")
         project.cl_ana3 = request.POST.get("cl_ana3")
         project.cl_re3 = request.POST.get("cl_re3")
-
         
-
-
+        
+        # Project Closure - Approvals
+        project.cl_business_name = request.POST.get("cl_business_name")
+        project.cl_business_sponser = request.POST.get("cl_business_sponser")
+        project.cl_it_project_manager = request.POST.get("cl_it_project_manager")
+        project.cl_it_service_owner_manager = request.POST.get("cl_it_service_owner_manager")
+        project.cl_it_business_partener = request.POST.get("cl_it_business_partener")
+        project.cl_it_technical_mgr = request.POST.get("cl_it_technical_mgr")
+        project.cl_it_pmo_manager = request.POST.get("cl_it_pmo_manager")
+        
+        
+        if request.FILES.get("cl_business_name_sign"):
+            project.cl_business_name_sign = request.FILES.get("cl_business_name_sign")
+        if request.FILES.get("cl_business_sponser_sign"):
+            project.cl_business_sponser_sign = request.FILES.get("cl_business_sponser_sign")
+        if request.FILES.get("cl_it_project_manager_sig"):
+            project.cl_it_project_manager_sig = request.FILES.get("cl_it_project_manager_sig")
+        if request.FILES.get("cl_it_service_owner_manager_sig"):
+            project.cl_it_service_owner_manager_sig = request.FILES.get("cl_it_service_owner_manager_sig")
+        if request.FILES.get("cl_it_business_partener_sig"):
+            project.cl_it_business_partener_sig = request.FILES.get("cl_it_business_partener_sig")
+        if request.FILES.get("cl_it_technical_mgr_sign"):
+            project.cl_it_technical_mgr_sign = request.FILES.get("cl_it_technical_mgr_sign")
+        if request.FILES.get("cl_it_pmo_manager_sig"):
+            project.cl_it_pmo_manager_sig = request.FILES.get("cl_it_pmo_manager_sig")
+        
+        
         # Save the project
         project.full_clean()
         project.save()

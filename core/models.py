@@ -413,6 +413,29 @@ class ProjectForm(models.Model):
     cl_ana3 = models.CharField(max_length=255, blank=True, null=True)
     cl_re3 = models.CharField(max_length=255, blank=True, null=True)
     
+    # Project Closure - Approvals
+
+    cl_business_name = models.CharField(max_length=255, blank=True, null=True)
+    cl_business_name_sign = models.FileField(upload_to='signatures/', blank=True, null=True)
+    
+    cl_business_sponser = models.CharField(max_length=255, blank=True, null=True)
+    cl_business_sponser_sign = models.FileField(upload_to='signatures/', blank=True, null=True)
+    
+    cl_it_project_manager = models.CharField(max_length=255, blank=True, null=True)
+    cl_it_project_manager_sig = models.FileField(upload_to='signatures/', blank=True, null=True)
+    
+    cl_it_service_owner_manager = models.CharField(max_length=255, blank=True, null=True)
+    cl_it_service_owner_manager_sig = models.FileField(upload_to='signatures/', blank=True, null=True)
+    
+    cl_it_business_partener = models.CharField(max_length=255, blank=True, null=True)
+    cl_it_business_partener_sig = models.FileField(upload_to='signatures/', blank=True, null=True)
+    
+    cl_it_technical_mgr = models.CharField(max_length=255, blank=True, null=True)
+    cl_it_technical_mgr_sign = models.FileField(upload_to='signatures/', blank=True, null=True)
+    
+    cl_it_pmo_manager = models.CharField(max_length=255, blank=True, null=True)
+    cl_it_pmo_manager_sig = models.FileField(upload_to='signatures/', blank=True, null=True)
+    
     
 
 
@@ -530,7 +553,17 @@ class ProjectForm(models.Model):
         "cl_des1":2,
         "cl_imp1":2,
         "cl_ana3":2,
-        "cl_re3":2
+        "cl_re3":2,
+        
+        # ##################################
+        
+        "cl_business_name_sign":1,
+        "cl_business_sponser_sign":1,
+        "cl_it_project_manager_sig":1,
+        "cl_it_service_owner_manager_sig":1,
+        "cl_it_business_partener_sig":1,
+    
+        
         
         
         

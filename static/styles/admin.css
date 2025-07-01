@@ -179,6 +179,9 @@ img {
   align-items: center;
   margin-top: 100px; 
 
+
+  
+
 }
 
 .department-container {
@@ -220,4 +223,16 @@ img {
   font-size: 1.5em;
   color: #a17659;
   font-weight: 400;
+}
+
+
+.main {
+
+  background-image: url('../images/back.png'); /* Path to the image */
+    background-size: cover; /* Ensure the image covers the entire page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Make the background fixed while scrolling */
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
+  
 }

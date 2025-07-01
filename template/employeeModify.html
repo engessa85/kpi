@@ -34,18 +34,18 @@
                     </div>
                     <div class="input-field">
                         <label>IT Project Manager</label>
-                        <input type="text" name="it_project_manager" value="{{project.it_project_manager}}">
+                        <input type="text" name="it_project_manager_field" value="{{project.it_project_manager_field}}">
                     </div>
                     <div class="input-field">
                         <label>IT Service Owner Manager</label>
-                        <input type="text" name="it_service_owner_manager" value="{{project.it_service_owner_manager}}">
+                        <input type="text" name="it_service_owner_manager_field" value="{{project.it_service_owner_manager_field}}">
                     </div>
                     <div class="input-field">
                         <label>Business Sponsor</label>
                         <input type="text" name="business_sponsor" value="{{project.business_sponsor}}">
                     </div>
                     <div class="input-field">
-                        <label>Business Owner</label>
+                        <label>Business Owner/Rep/PM</label>
                         <input type="text" name="business_owner" value="{{project.business_owner}}">
                     </div>
                      {% if messages %}
@@ -103,7 +103,7 @@
     
             <div>
                 <div class="input-field">
-                    <label>Project Description</label>
+                    <label>Project Description & Objectives</label>
                     <textarea name="project_description">{{project.project_description}}</textarea>
                 </div>
                 <div class="input-field">
@@ -1016,11 +1016,21 @@
                     </div>
                     <div class="input-field-row">
                         <label>MS Project online</label>
-                        <input type="text" name="ms_project" value="{{project.ms_project}}">
+                        <select name="ms_project">
+                            <option value="">Select a plan</option>
+                            <option value="weekly" {% if project.ms_project == "weekly" %}selected{% endif %}>Weekly</option>
+                            <option value="biweekly" {% if project.ms_project == "biweekly" %}selected{% endif %}>Biweekly</option>
+                            <option value="monthly" {% if project.ms_project == "monthly" %}selected{% endif %}>Monthly</option>
+                        </select>
                     </div>
                     <div class="input-field-row">
                         <label>Project Report</label>
-                        <input type="text" name="project_report" value="{{project.project_report}}">
+                        <select name="project_report">
+                            <option value="">Select a plan</option>
+                            <option value="weekly" {% if project.project_report == "weekly" %}selected{% endif %}>Weekly</option>
+                            <option value="biweekly" {% if project.project_report == "biweekly" %}selected{% endif %}>Biweekly</option>
+                            <option value="monthly" {% if project.project_report == "monthly" %}selected{% endif %}>Monthly</option>
+                        </select>
                     </div>
                 </div>
             </div>

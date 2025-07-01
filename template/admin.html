@@ -47,6 +47,11 @@
         {% endfor %}
     </div>
 
+    <!-- <script src="{% static 'js/progress_circle.js' %}" defer></script> -->
+    <script>
+    const departmentId = "{{ dep_id }}";  // Make dep_id available to JS
+    </script>
     <script src="{% static 'js/progress_circle.js' %}" defer></script>
+
 </body>
 </html>

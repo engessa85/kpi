@@ -1,13 +1,49 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
+class Department(models.Model):
+    DEPARTMENT_CHOICES = [
+        ('IT', 'IT'),
+        ('Corporate', 'Corporate'),
+        ('Operations', 'Operations'),
+        ('Commercial', 'Commercial'),
+        ('SBU', 'SBU'),
+        ('Ground Operations', 'Ground Operations'),
+        ('Technical Service', 'Technical Service'),
+    ]
+
+    name = models.CharField(max_length=100, choices=DEPARTMENT_CHOICES, unique=True)
+
+    def average_completion(self):
+        from django.db.models import Avg
+        # Get users in this department
+        users = UserDepartment.objects.filter(department=self).values_list('user', flat=True)
+        # Get all projects for those users
+        from .models import ProjectForm
+        avg = ProjectForm.objects.filter(user__in=users).aggregate(avg=Avg('progress'))['avg']
+        return round(avg, 2) if avg is not None else 0
+
+
+
+    def __str__(self):
+        return self.name
+
+class UserDepartment(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.department.name}"
+
 class ProjectForm(models.Model):
+    # department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, related_name='projects')
     user = models.ForeignKey(User, on_delete=models.CASCADE)  # Each user has one form
     project_name = models.CharField(max_length=255, blank=True, null=True)
     portfolio_operations = models.CharField(max_length=255, blank=True, null=True)
-    it_project_manager = models.CharField(max_length=255, blank=True, null=True)
+    it_project_manager_field = models.CharField(max_length=255, blank=True, null=True)
     critical_project = models.BooleanField(default=False)
-    it_service_owner_manager = models.CharField(max_length=255, blank=True, null=True)
+    it_service_owner_manager_field = models.CharField(max_length=255, blank=True, null=True)
     budget_owner = models.CharField(max_length=255, blank=True, null=True)
     business_sponsor = models.CharField(max_length=255, blank=True, null=True)
     project_budget = models.CharField(max_length=255, blank=True, null=True)
@@ -305,8 +341,8 @@ class ProjectForm(models.Model):
         blank=True,
         null=True
     )
-    ms_project = models.CharField(max_length=255, blank=True, null=True)
-    project_report = models.CharField(max_length=255, blank=True, null=True)
+    ms_project = models.CharField(max_length=255, choices=PLAN_CHOICES, blank=True, null=True)
+    project_report = models.CharField(max_length=255,choices=PLAN_CHOICES, blank=True, null=True)
 
 
     # Approvals
@@ -436,14 +472,6 @@ class ProjectForm(models.Model):
     cl_it_pmo_manager = models.CharField(max_length=255, blank=True, null=True)
     cl_it_pmo_manager_sig = models.FileField(upload_to='signatures/', blank=True, null=True)
     
-    
-
-
-
-
-    
-
-    
 
 
     progress = models.IntegerField(default=0)  # Store progress percentage
@@ -452,9 +480,9 @@ class ProjectForm(models.Model):
     FIELD_WEIGHTS = {
         "project_name": 1,
         # "portfolio_operations": 1,
-        "it_project_manager": 1,
+        "it_project_manager_field": 1,
         "critical_project": 1,
-        "it_service_owner_manager": 1,
+        "it_service_owner_manager_field": 1,
         # "budget_owner": 5,
         # "business_sponsor": 10,
         # "project_budget": 10,

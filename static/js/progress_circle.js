@@ -17,8 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
     project_name.textContent = `${projectName} - ${userName}`;
   }
 
+  console.log(departmentId);
+  
+
   // Fetch progress values from Django
-  fetch("/get-progress/")
+  fetch(`/get-progress/${departmentId}/`)
     .then((response) => response.json())
     .then((data) => {
       data.forEach((item, index) => {

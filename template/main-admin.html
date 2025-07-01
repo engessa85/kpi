@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/admin.css' %}">
+    
+    <title>Main Admin</title>
+</head>
+<body>
+    <div class="head">
+        <div class="kpi">
+            <h1>KPI</h1>
+        </div>
+        <div></div>
+        <div class="search">
+            <input type="text" name="search" id="search" placeholder="search">
+            <button>Search</button>
+        </div>
+        <div class="out">
+            <a href="{% url 'logout_view'%}">Log Out</a>
+        </div>
+    </div>
+
+
+    <div class="page-wrapper">
+        <div class="department-container">
+            {% for dep in deps %}
+                <a href="{% url 'department-details-view' dep.id%}">
+                    <div class="department-box">
+                        <div class="department-name">
+                        {{ dep.name }}
+                        </div>
+                        <div class="department-progress">KPI: {{dep.average_completion}}%</div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    
+
+    <script src="{% static 'js/progress_circle.js' %}" defer></script>
+</body>
+</html>

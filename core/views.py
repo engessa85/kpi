@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import JsonResponse
-from .models import ProjectForm
+from .models import ProjectForm, Department, UserDepartment
 from .forms import ProjectFormModel
 from django.shortcuts import get_object_or_404
 
@@ -21,7 +21,8 @@ def login_view(request):
         if user is not None:
             login(request, user)
             if user.is_staff:
-                return redirect('admin-view')
+                # return redirect('admin-view')
+                return redirect('main-admin-view')
             else:
                 return redirect('employee-view')
         else:
@@ -29,17 +30,56 @@ def login_view(request):
 
     return render(request, 'login.html')
 
+# @login_required
+# def admin_view(request):
+#     projects = ProjectForm.objects.all().order_by("-id")
+#     num_circles = [i for i in range(len(projects))]
+#     return render(request, 'admin.html', {"num_circles": num_circles})
+
+
+
 @login_required
-def admin_view(request):
-    projects = ProjectForm.objects.all().order_by("-id")
+def department_view(request, dep_id):
+    department = get_object_or_404(Department, id=dep_id)
+    
+    
+    # Get all users in this department
+    user_ids = UserDepartment.objects.filter(department=department).values_list('user_id', flat=True)
+    
+ 
+    
+    # Get all projects for those users
+    projects = ProjectForm.objects.filter(user_id__in=user_ids).order_by("-id")
+
+    for project in projects:
+        print(project.user.username)
+        print(project.project_name)
+
     num_circles = [i for i in range(len(projects))]
-    return render(request, 'admin.html', {"num_circles": num_circles})
+    return render(request, 'admin.html', {"num_circles": num_circles, "dep_id":dep_id})
+
+@login_required
+def  main_admin_view(request):
+    deps = Department.objects.all()
+    for dep in deps:
+        print(dep.average_completion())
+    context = {"deps":deps}
+    return render(request, "main-admin.html", context )
 
 
 
-def get_progress(request):
+
+
+
+def get_progress(request, dep_id):
+    department = get_object_or_404(Department, id=dep_id)
+    # Get all users in this department
+    user_ids = UserDepartment.objects.filter(department=department).values_list('user_id', flat=True)
+
+    # Get all projects for those users
+    projects = ProjectForm.objects.filter(user_id__in=user_ids).order_by("-id")
+
     progress_data = []
-    projects = ProjectForm.objects.all().order_by("-id")
     for project in projects:
         progress_data.append({"id":project.id, "progress":project.progress, "project_name":project.project_name, "project_user_name":project.user.username})
     
@@ -144,8 +184,8 @@ def modify_employee_projects_view(request, id):
 
     if request.method == 'POST':
         project.project_name = request.POST.get('project_name')
-        project.it_project_manager = request.POST.get('it_project_manager')
-        project.it_service_owner_manager = request.POST.get('it_service_owner_manager')
+        project.it_project_manager_field = request.POST.get('it_project_manager_field')
+        project.it_service_owner_manager_field = request.POST.get('it_service_owner_manager_field')
         project.business_sponsor = request.POST.get('business_sponsor')
         project.business_owner = request.POST.get('business_owner')
 

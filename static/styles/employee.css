@@ -44,7 +44,7 @@ body {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 40px auto;
     background: white;
     padding: 20px;
@@ -98,7 +98,6 @@ textarea {
 
 button {
     
-    background: #a17659;
     color: white;
     padding: 12px;
     margin-top: 20px;
@@ -111,7 +110,7 @@ button {
 }
 
 button:hover {
-    background: #a17659;
+    opacity: 60%;
     transform: translateY(-2px);
 }
 
@@ -320,9 +319,28 @@ button:active {
 
 .main {
       background-image: url('../images/back2.png'); /* Path to the image */
-    background-size: cover; /* Ensure the image covers the entire page */
+    background-size: center; /* Ensure the image covers the entire page */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-attachment: fixed; /* Make the background fixed while scrolling */
     min-height: 100vh; /* Ensure the body takes up the full viewport height */
+}
+
+.title-container {
+    background-color: rgb(14, 14, 80); 
+    color: white; 
+    display: inline-block; 
+    padding: 8px; 
+    border-radius: 10px;
+}
+
+
+.title-container-closure{
+
+    background-color: orange; 
+    color: white; 
+    display: inline-block; 
+    padding: 8px; 
+    border-radius: 10px;
+
 }

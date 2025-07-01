@@ -1,0 +1,746 @@
+<div>
+    <!-- Project Details -->
+    <div class="form-step">
+        <div style="display: flex; gap: 5px; align-items: center; justify-content: space-between;">
+            <div>
+                <div class="title-container">Project Charter</div>
+                <div class="title-container">Welcome {{ user.username }}</div>
+            </div>
+            <div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'employee-projects' %}">projects</a>
+                </div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'logout_view' %}">logout</a>
+                </div>
+            </div>
+        </div>
+        <h4>Project Details</h4>
+        <div class="form-row">
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Project Name</label>
+                    <input type="text" name="project_name">
+                </div>
+                <div class="input-field">
+                    <label>IT Project Manager</label>
+                    <input type="text" name="it_project_manager_field">
+                </div>
+                <div class="input-field">
+                    <label>IT Service Owner Manager</label>
+                    <input type="text" name="it_service_owner_manager_field">
+                </div>
+                <div class="input-field">
+                    <label>Business Sponsor</label>
+                    <input type="text" name="business_sponsor">
+                </div>
+                <div class="input-field">
+                    <label>Business Owner/Rep/PM</label>
+                    <input type="text" name="business_owner">
+                </div>
+                {% if messages %}
+                {% for message in messages %}
+                    <div class="alert">
+                    {{ message }}
+                    </div>
+                {% endfor %}
+                {% endif %}
+                <div class="input-field">
+                    <label>Start Date</label>
+                    <input type="date" name="project_start_date">
+                </div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Portfolio</label>
+                    <input type="text" name="portfolio_operations">
+                </div>
+                <div class="input-field-check">
+                    <label>Critical Project</label>
+                    <input type="checkbox" name="critical_project">
+                </div>
+                <div class="input-field">
+                    <label>Budget Owner</label>
+                    <input type="text" name="budget_owner">
+                </div>
+                <div class="input-field">
+                    <label>Project Budget</label>
+                    <input type="text" name="project_budget">
+                </div>
+                <div class="input-field">
+                    <label>IT PMO</label>
+                    <input type="text" name="it_pmo">
+                </div>
+                {% if messages %}
+                {% for message in messages %}
+                    <div class="alert">
+                    {{ message }}
+                    </div>
+                {% endfor %}
+                {% endif %}
+                <div class="input-field">
+                    <label>Finish Date</label>
+                    <input type="date" name="project_finish_date">
+                </div>
+            </div>
+        </div>
+
+        <hr class="seperator"/>
+
+        <div>
+            <div class="input-field">
+                <label>Project Description & Objectives</label>
+                <textarea name="project_description"></textarea>
+            </div>
+            <div class="input-field">
+                <label>Business Value</label>
+                <textarea name="business_value"></textarea>
+            </div>
+            <div class="input-field">
+                <label>ROI (%)</label>
+                    <input type="number" name="roi">
+            </div>
+            <div class="input-field">
+                <label>Project Scope</label>
+                <textarea name="project_scope"></textarea>
+            </div>
+            <div class="input-field">
+                <label>Constraints</label>
+                <textarea name="constraints"></textarea>
+            </div>
+            <div class="input-field">
+                <label>Vendor Service Support</label>
+                <textarea name="vendor_service_support"></textarea>
+            </div>
+        </div>
+
+        <div class="button-section">
+            
+            <button type="button" class="next-step" style="background-color: rgb(14, 14, 80);">Next</button>
+        </div>
+    </div>
+
+    <!-- Deliverables -->
+
+
+    <div class="form-step">
+        <div style="display: flex; gap: 5px; align-items: center; justify-content: space-between;">
+            <div>
+                <div class="title-container">Project Charter</div>
+                <div class="title-container">Welcome {{ user.username }}</div>
+            </div>
+            <div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'employee-projects' %}">projects</a>
+                </div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'logout_view' %}">logout</a>
+                </div>
+            </div>
+        </div>
+        <h4>Deliverables</h4>
+        
+        <div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <label>Name</label>
+                    <input type="text" name="dev_first_name">
+                </div>
+                <div class="input-field date">
+                    <label>Date</label>
+                    <input type="date" name="dev_first_date">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_second_name">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_second_date">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_third_name">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_third_date">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_fourth_name">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_fourth_date">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_fifth_name">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_fifht_date">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_sixth_name">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_sixth_date">
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div class="extra-container">
+            <p>Do you want to add more deliverables?</p>
+            <button class="extra-button" type="button" onclick="toggleExtraDeliverables()">Add More</button>
+        </div>
+
+
+        <div id="extra-deliverables" style="display: none;">
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_extra_name_1">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_extra_date_1">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_extra_name_2">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_extra_date_2">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_extra_name_3">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_extra_date_3">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_extra_name_4">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_extra_date_4">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_extra_name_5">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_extra_date_5">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_extra_name_6">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_extra_date_6">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_extra_name_7">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_extra_date_7">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_extra_name_8">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_extra_date_8">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_extra_name_9">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_extra_date_9">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="dev_extra_name_10">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="dev_extra_date_10">
+                </div>
+            </div>
+        </div>
+
+        
+
+
+        <div class="button-section">
+            <button  type="button" class="prev-step" style="background-color: rgb(14, 14, 80);">Previous</button>
+            <button type="button" class="next-step" style="background-color: rgb(14, 14, 80);">Next</button>
+        </div>
+    </div>
+
+    <!-- Initial Project Plan -->
+
+    <div class="form-step">
+        <div style="display: flex; gap: 5px; align-items: center; justify-content: space-between;">
+            <div>
+                <div class="title-container">Project Charter</div>
+                <div class="title-container">Welcome {{ user.username }}</div>
+            </div>
+            <div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'employee-projects' %}">projects</a>
+                </div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'logout_view' %}">logout</a>
+                </div>
+            </div>
+        </div>
+        <h4>Initial Project Plan</h4>
+        
+        <div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <label>Task Name</label>
+                    <input type="text" name="first_task_name">
+                </div>
+                <div class="input-field date">
+                    <label>Duration</label>
+                    <input type="text" name="first_task_duration">
+                </div>
+                
+                <div class="input-field date">
+                    <label>Start</label>
+                    <input type="date" name="first_task_starting">
+                </div>
+                <div class="input-field date">
+                    <label>Finish</label>
+                    <input type="date" name="first_task_ending">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="second_task_name">
+                </div>
+                <div class="input-field date">
+                    <input type="text" name="second_task_duration">
+                </div>
+                
+                <div class="input-field date">
+                    <input type="date" name="second_task_starting">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="second_task_ending">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="third_task_name">
+                </div>
+                <div class="input-field date">
+                    <input type="text" name="third_task_duration">
+                </div>
+                
+                <div class="input-field date">
+                    <input type="date" name="third_task_starting">
+                </div>
+                <div class="input-field date">
+                    <input type="date" name="third_task_ending">
+                </div>
+            </div>
+        </div>
+
+            <div class="extra-container">
+            <p>Do you want to add more tasks?</p>
+            <button class="extra-button" type="button" onclick="toggleTaskDeliverables()">Add More</button>
+        </div>
+
+        <div id="extra-task" style="display: none;">
+            {% for i in extra_tasks_range %}
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="task_name_extra_{{ i }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="task_duration_extra_{{ i }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_starting_extra_{{ i }}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="date" name="task_ending_extra_{{ i }}">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="button-section">
+            <button type="button" class="prev-step" style="background-color: rgb(14, 14, 80);">Previous</button>
+            <button type="button" class="next-step" style="background-color: rgb(14, 14, 80);">Next</button>
+        </div>
+    </div>
+
+    <!-- Risks & Issues -->
+
+    <div class="form-step">
+        <div style="display: flex; gap: 5px; align-items: center; justify-content: space-between;">
+            <div>
+                <div class="title-container">Project Charter</div>
+                <div class="title-container">Welcome {{ user.username }}</div>
+            </div>
+            <div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'employee-projects' %}">projects</a>
+                </div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'logout_view' %}">logout</a>
+                </div>
+            </div>
+        </div>
+        <h4>Risks & Issues</h4>
+        
+        <div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <label>Task Name</label>
+                    <input type="text" name="first_risk_name">
+                </div>
+                <div class="input-field date">
+                    <label>Summary</label>
+                    <input type="text" name="first_risk_summary">
+                </div>
+                
+                <div class="input-field date">
+                    <label>Due Date</label>
+                    <input type="date" name="first_risk_date">
+                </div>
+                <div class="input-field date">
+                    <label>Sevirity(H|L|M)</label>
+                    <input type="text" name="first_risk_sevirity">
+                </div>
+                <div class="input-field date">
+                    <label>Mitigation</label>
+                    <input type="text" name="first_risk_mitigation">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="second_risk_name">
+                </div>
+                <div class="input-field date">
+                    <input type="text" name="second_risk_summary">
+                </div>
+                
+                <div class="input-field date">
+                    <input type="date" name="second_risk_date">
+                </div>
+                <div class="input-field date">
+                    <input type="text" name="second_risk_sevirity">
+                </div>
+                <div class="input-field date">
+                    <input type="text" name="second_risk_mitigation">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="third_risk_name">
+                </div>
+                <div class="input-field date">
+                    <input type="text" name="third_risk_summary">
+                </div>
+                
+                <div class="input-field date">
+                    <input type="date" name="third_risk_date">
+                </div>
+                <div class="input-field date">
+                    <input type="text" name="third_risk_sevirity">
+                </div>
+                <div class="input-field date">
+                    <input type="text" name="third_risk_mitigation">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="extra-container">
+            <p>Do you want to add more fields</p>
+            <button class="extra-button" type="button" onclick="toggleRiskkDeliverables()">Add More</button>
+        </div>
+
+        <div id="extra-risk" style="display: none;">
+            {% for i in extra_risks_range %}
+                <div class="dev-row">
+                    <div class="input-field item">
+                        <input type="text" name="risk_name_{{i}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="risk_summary_{{i}}">
+                    </div>
+                    
+                    <div class="input-field date">
+                        <input type="date" name="risk_date_{{i}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="risk_sevirity_{{i}}">
+                    </div>
+                    <div class="input-field date">
+                        <input type="text" name="risk_mitigation_{{i}}">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        
+
+        <input type="hidden" name="final_submit" value="true">
+
+        <div class="button-section">
+            <button type="button" class="prev-step" style="background-color: rgb(14, 14, 80);">Previous</button>
+            <button type="button" class="next-step" style="background-color: rgb(14, 14, 80);">Next</button>
+        </div>
+    </div>
+
+    <!-- Stakeholders  -->
+
+    <div class="form-step">
+        <div style="display: flex; gap: 5px; align-items: center; justify-content: space-between;">
+            <div>
+                <div class="title-container">Project Charter</div>
+                <div class="title-container">Welcome {{ user.username }}</div>
+            </div>
+            <div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'employee-projects' %}">projects</a>
+                </div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'logout_view' %}">logout</a>
+                </div>
+            </div>
+        </div>
+        <h4>Stakeholders</h4>
+        
+        <div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <label>Name</label>
+                    <input type="text" name="stack_first_name">
+                </div>
+                <div class="input-field item">
+                    <label>Department</label>
+                    <input type="text" name="stack_first_department">
+                </div>
+                <div class="input-field item">
+                    <label>Role</label>
+                    <input type="text" name="stack_first_role">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="stack_second_name">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="stack_second_department">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="stack_second_role">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="stack_third_name">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="stack_third_department">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="stack_third_role">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="stack_fourth_name">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="stack_fourth_department">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="stack_fourth_role">
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div class="extra-container">
+            <p>Do you want to add more fields</p>
+            <button class="extra-button" type="button" onclick="toggleStackDeliverables()">Add More</button>
+        </div>
+
+        <div id="extra-stack" style="display: none;">
+            {% for i in extra_stack_range %}
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="stack_name_extra_{{i}}">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="stack_department_extra_{{i}}">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="stack_role_extra_{{i}}">
+                </div>
+            </div>
+                
+            {% endfor %}
+        </div>
+
+
+        <div class="button-section">
+            <button type="button" class="prev-step" style="background-color: rgb(14, 14, 80);">Previous</button>
+            <button type="button" class="next-step" style="background-color: rgb(14, 14, 80);">Next</button>
+        </div>
+    </div>
+
+    <!-- Governance -->
+
+    <div class="form-step">
+        <div style="display: flex; gap: 5px; align-items: center; justify-content: space-between;">
+            <div>
+                <div class="title-container">Project Charter</div>
+                <div class="title-container">Welcome {{ user.username }}</div>
+            </div>
+            <div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'employee-projects' %}">projects</a>
+                </div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'logout_view' %}">logout</a>
+                </div>
+            </div>
+        </div>
+        <h4>Governance</h4>
+        
+        <div>
+            <div class="dev-row-row">
+
+                <div class="input-field-row">
+                    <label>Communication plan</label>
+                    <select name="c_plan">
+                        <option value="">Select a plan</option>
+                        <option value="weekly" {% if project.c_plan == "weekly" %}selected{% endif %}>Weekly</option>
+                        <option value="biweekly" {% if project.c_plan == "biweekly" %}selected{% endif %}>Biweekly</option>
+                        <option value="monthly" {% if project.c_plan == "monthly" %}selected{% endif %}>Monthly</option>
+                    </select>
+                </div>
+                <div class="input-field-row">
+                    <label>MS Project online</label>
+                    <select name="ms_project">
+                        <option value="">Select a plan</option>
+                        <option value="weekly" {% if project.ms_project == "weekly" %}selected{% endif %}>Weekly</option>
+                        <option value="biweekly" {% if project.ms_project == "biweekly" %}selected{% endif %}>Biweekly</option>
+                        <option value="monthly" {% if project.ms_project == "monthly" %}selected{% endif %}>Monthly</option>
+                    </select>
+                </div>
+                <div class="input-field-row">
+                    <label>Project Report</label>
+                    <select name="project_report">
+                        <option value="">Select a plan</option>
+                        <option value="weekly" {% if project.project_report == "weekly" %}selected{% endif %}>Weekly</option>
+                        <option value="biweekly" {% if project.project_report == "biweekly" %}selected{% endif %}>Biweekly</option>
+                        <option value="monthly" {% if project.project_report == "monthly" %}selected{% endif %}>Monthly</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="button-section">
+            <button type="button" class="prev-step" style="background-color: rgb(14, 14, 80);">Previous</button>
+            <button type="button" class="next-step" style="background-color: rgb(14, 14, 80);">Next</button>
+        </div>
+    </div>
+
+    <!-- Approvals -->
+
+    <div class="form-step">
+        <div style="display: flex; gap: 5px; align-items: center; justify-content: space-between;">
+            <div>
+                <div class="title-container">Project Charter</div>
+                <div class="title-container">Welcome {{ user.username }}</div>
+            </div>
+            <div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'employee-projects' %}">projects</a>
+                </div>
+                <div class="title-container">
+                    <a style="text-decoration: none; color: white;" href="{% url 'logout_view' %}">logout</a>
+                </div>
+            </div>
+        </div>
+        <h4>Approvals</h4>
+        
+        <div>
+            <div class="dev-row-row">
+                <div class="input-field-approval">
+                    <label>Business Owner/Rep/PM</label>
+                    <input type="text" name="business_name" placeholder="name">
+                    <input type="file" name="business_sig">
+                </div>
+                <div class="input-field-approval">
+                    <label>IT Project Manager</label>
+                    <input type="text" name="it_project_manager" placeholder="name">
+                    <input type="file" name="it_project_manager_sig">
+                </div>
+                <div class="input-field-approval">
+                    <label>IT Service Owner Manager</label>
+                    <input type="text" name="it_service_owner_manager" placeholder="name">
+                    <input type="file" name="it_service_owner_manager_sig">
+                </div>
+                <div class="input-field-approval">
+                    <label>IT Business Partner</label>
+                    <input type="text" name="it_business_partener" placeholder="name">
+                    <input type="file" name="it_business_partener_sig">
+                </div>
+                <div class="input-field-approval">
+                    <label>IT PMO Manager</label>
+                        <input type="text" name="it_pmo_manager" placeholder="name">
+                    <input type="file" name="it_pmo_manager_sig">
+                </div>
+            </div>
+        </div>
+
+
+        <input type="hidden" name="final_submit" value="true">
+
+        <div class="button-section">
+            <button type="button" class="prev-step" style="background-color: rgb(14, 14, 80);">Previous</button>
+            <button type="button" class="next-step" style="background-color: rgb(14, 14, 80);">Next</button>
+
+        </div>
+    </div>
+
+
+</div>

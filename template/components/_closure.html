@@ -1,0 +1,450 @@
+<div>
+
+    <!-- Project Closure - General Information -->
+    <div class="form-step" style="background-color: bisque; padding: 20px;">
+        <div style="display: flex; gap: 5px; align-items: center; justify-content: space-between;">
+            <div>
+                <div class="title-container-closure">Project Closure</div>
+                <div class="title-container-closure">Welcome {{ user.username }}</div>
+            </div>
+            <div>
+                <div class="title-container-closure">
+                    <a style="text-decoration: none; color: white;" href="{% url 'employee-projects' %}">projects</a>
+                </div>
+                <div class="title-container-closure">
+                    <a style="text-decoration: none; color: white;" href="{% url 'logout_view' %}">logout</a>
+                </div>
+            </div>
+        </div>
+        <h4>General Information</h4>
+        <div class="form-row">
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Project Name</label>
+                    <input type="text" name="cl_project_name">
+                </div>
+                <div class="input-field">
+                    <label>Actual Start Date</label>
+                    <input type="date" name="cl_actual_start_date">
+                </div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-field">
+                    <label>Project Manager</label>
+                    <input type="text" name="cl_project_manager">
+                </div>
+                <div class="input-field">
+                    <label>Actual Finish Date</label>
+                    <input type="date" name="cl_actual_finish_date">
+                </div>
+            </div>
+        </div>
+
+        <div class="input-container-row-row">
+            <div class="row-field">
+                <label>Reason of Closure</label>
+                <input placeholder="Completed" type="text" name="cl_reason_status">
+                <input style="margin-left: 10px;" placeholder="Partial completed (reason)" type="text" name="cl_reason_status_reason">
+            </div>
+            
+        </div>
+
+        <input type="hidden" name="final_submit" value="true">
+
+        <div class="button-section">
+            <button type="button" class="prev-step" style="background-color: orange;">Previous</button>
+            <button type="button" class="next-step" style="background-color: orange;">Next</button>
+
+        </div>
+    </div>
+
+    <!-- Actual Deliverables -->
+    <div class="form-step" style="background-color: bisque; padding: 20px;">
+        <div style="display: flex; gap: 5px; align-items: center; justify-content: space-between;">
+            <div>
+                <div class="title-container-closure">Project Closure</div>
+                <div class="title-container-closure">Welcome {{ user.username }}</div>
+            </div>
+             <div>
+                <div class="title-container-closure">
+                    <a style="text-decoration: none; color: white;" href="{% url 'employee-projects' %}">projects</a>
+                </div>
+                <div class="title-container-closure">
+                    <a style="text-decoration: none; color: white;" href="{% url 'logout_view' %}">logout</a>
+                </div>
+            </div>
+        </div>
+        <h4>Actual Deliverables</h4>
+        <div>
+            <div class="dev-row">
+                <div class="input-field item-mod">
+                    <label>Name</label>
+                    <input type="text" name="cl_actual_d_1">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item-mod">
+                    <input type="text" name="cl_actual_d_2">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item-mod">
+                    <input type="text" name="cl_actual_d_3">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item-mod">
+                    <input type="text" name="cl_actual_d_4">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item-mod">
+                    <input type="text" name="cl_actual_d_5">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item-mod">
+                    <input type="text" name="cl_actual_d_6">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item-mod">
+                    <input type="text" name="cl_actual_d_7">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item-mod">
+                    <input type="text" name="cl_actual_d_8">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item-mod">
+                    <input type="text" name="cl_actual_d_9">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item-mod">
+                    <input type="text" name="cl_actual_d_10">
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="final_submit" value="true">
+
+        <div class="button-section">
+            <button type="button" class="prev-step" style="background-color: orange;">Previous</button>
+            <button type="button" class="next-step" style="background-color: orange;">Next</button>
+
+        </div>
+    </div>
+
+
+    <!-- CRs -->
+
+    <div class="form-step" style="background-color: bisque; padding: 20px;">
+        <div style="display: flex; gap: 5px; align-items: center; justify-content: space-between;">
+            <div>
+                <div class="title-container-closure">Project Closure</div>
+                <div class="title-container-closure">Welcome {{ user.username }}</div>
+            </div>
+            <div>
+                <div class="title-container-closure">
+                    <a style="text-decoration: none; color: white;" href="{% url 'employee-projects' %}">projects</a>
+                </div>
+                <div class="title-container-closure">
+                    <a style="text-decoration: none; color: white;" href="{% url 'logout_view' %}">logout</a>
+                </div>
+            </div>
+        </div>
+        <h4>CRs</h4>
+
+        <div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <label>CR number</label>
+                    <input type="text" name="cl_cr_name1">
+                </div>
+                <div class="input-field item">
+                    <label>Cost</label>
+                    <input type="text" name="cl_cost1">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name2">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost2">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name3">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost3">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name4">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost4">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name5">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost5">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name6">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost6">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name7">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost7">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name8">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost8">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name9">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost9">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name10">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost10">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name11">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost11">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name12">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost12">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name13">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost13">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name14">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost14">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_cr_name15">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_cost15">
+                </div>
+            </div>
+        </div>
+        
+        <div class="button-section">
+            <button type="button" class="prev-step" style="background-color: orange;">Previous</button>
+            <button type="button" class="next-step" style="background-color: orange;">Next</button>
+        </div>
+    </div>
+
+    <!-- Lessons Learned -->
+    <div class="form-step" style="background-color: bisque; padding: 20px;">
+        <div style="display: flex; gap: 5px; align-items: center; justify-content: space-between;">
+            <div>
+                <div class="title-container-closure">Project Closure</div>
+                <div class="title-container-closure">Welcome {{ user.username }}</div>
+            </div>
+             <div>
+                <div class="title-container-closure">
+                    <a style="text-decoration: none; color: white;" href="{% url 'employee-projects' %}">projects</a>
+                </div>
+                <div class="title-container-closure">
+                    <a style="text-decoration: none; color: white;" href="{% url 'logout_view' %}">logout</a>
+                </div>
+            </div>
+        </div>
+        <h4>Lessons Learned</h4>
+
+        <div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <label style="text-align: center;">Description<br/>what happened and the results</label>
+                    <input type="text" name="cl_des1">
+                </div>
+                <div class="input-field item">
+                    <label style="text-align: center;">Impact<br/>High/M/Low</label>
+                    <input type="text" name="cl_imp1">
+                </div>
+                <div class="input-field item">
+                    <label style="text-align: center;">Analysis<br/>Root cause of the problem/success</label>
+                    <input type="text" name="cl_ana1">
+                </div>
+                <div class="input-field item">
+                    <label style="text-align: center;">Recommendation<br/>What to implement for improving</label>
+                    <input type="text" name="cl_re1">
+                </div>
+            </div>
+
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_des2">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_imp2">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_ana2">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_re2">
+                </div>
+            </div>
+            <div class="dev-row">
+                <div class="input-field item">
+                    <input type="text" name="cl_des3">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_imp3">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_ana3">
+                </div>
+                <div class="input-field item">
+                    <input type="text" name="cl_re3">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="button-section">
+            <button type="button" class="prev-step" style="background-color: orange;">Previous</button>
+            <button type="button" class="next-step" style="background-color: orange;">Next</button>
+        </div>
+    </div>
+
+    <!-- Approvals -->
+    <div class="form-step" style="background-color: bisque; padding: 20px;">
+        <div style="display: flex; gap: 5px; align-items: center; justify-content: space-between;">
+            <div>
+                <div class="title-container-closure">Project Closure</div>
+                <div class="title-container-closure">Welcome {{ user.username }}</div>
+            </div>
+             <div>
+                <div class="title-container-closure">
+                    <a style="text-decoration: none; color: white;" href="{% url 'employee-projects' %}">projects</a>
+                </div>
+                <div class="title-container-closure">
+                    <a style="text-decoration: none; color: white;" href="{% url 'logout_view' %}">logout</a>
+                </div>
+            </div>
+        </div>
+        <h4>Approvals</h4>
+
+        <div>
+            <div class="dev-row-row">
+                <div class="input-field-approval">
+                    <label>Business Owner/Rep/PM</label>
+                    <input type="text" name="cl_business_name">
+                    <input type="file" name="cl_business_name_sign">
+                </div>
+                <div class="input-field-approval">
+                    <label>Business Sponsor</label>
+                    <input type="text" name="cl_business_sponser">
+                    <input type="file" name="cl_business_sponser_sign">
+                </div>
+                <div class="input-field-approval">
+                    <label>IT Project Manager</label>
+                    <input type="text" name="cl_it_project_manager">
+                    <input type="file" name="cl_it_project_manager_sig">
+                </div>
+                <div class="input-field-approval">
+                    <label>IT Service Owner Manager</label>
+                    <input type="text" name="cl_it_service_owner_manager">
+                    <input type="file" name="cl_it_service_owner_manager_sig">
+                </div>
+                <div class="input-field-approval">
+                    <label>IT Business Partner</label>
+                    <input type="text" name="cl_it_business_partener">
+                    <input type="file" name="cl_it_business_partener_sig">
+                </div>
+                <div class="input-field-approval">
+                    <label>IT Technical Delivery MGR</label>
+                        <input type="text" name="cl_it_technical_mgr">
+                    <input type="file" name="cl_it_technical_mgr_sign">
+                </div>
+                <div class="input-field-approval">
+                    <label>IT PMO Manager</label>
+                        <input type="text" name="cl_it_pmo_manager">
+                    <input type="file" name="cl_it_pmo_manager_sig">
+                </div>
+            </div>
+        </div>
+
+
+        <input type="hidden" name="final_submit" value="true">
+
+        <div class="button-section">
+            <button type="button" class="prev-step" style="background-color: orange;">Previous</button>
+        </div>
+    </div>
+        
+</div>

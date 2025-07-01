@@ -590,12 +590,7 @@ class ProjectForm(models.Model):
         "cl_it_project_manager_sig":1,
         "cl_it_service_owner_manager_sig":1,
         "cl_it_business_partener_sig":1,
-    
-        
-        
-        
-        
-        
+
     }
     
     
@@ -605,7 +600,7 @@ class ProjectForm(models.Model):
     def calculate_progress(self):
         """Calculate weighted progress based on filled fields."""
         total_score = sum(self.FIELD_WEIGHTS.values())  # Maximum possible score
-        print(total_score)
+        print("total_score", total_score)
         earned_score = 0
 
         for field, score in self.FIELD_WEIGHTS.items():
@@ -622,29 +617,29 @@ class ProjectForm(models.Model):
         
         
     
-    ## this function for checking which filed is used to caculate the percentage
-    # def calculate_progress(self):
-    #     total_score = sum(self.FIELD_WEIGHTS.values())
-    #     earned_score = 0
+    # this function for checking which filed is used to caculate the percentage
+    def calculate_progress(self):
+        total_score = sum(self.FIELD_WEIGHTS.values())
+        earned_score = 0
 
-    #     for field, score in self.FIELD_WEIGHTS.items():
-    #         value = getattr(self, field)
-    #         print(f"{field} = {value} --> ", end='')
+        for field, score in self.FIELD_WEIGHTS.items():
+            value = getattr(self, field)
+            print(f"{field} = {value} --> ", end='')
 
-    #         if isinstance(value, bool):
-    #             if value:
-    #                 earned_score += score
-    #                 print(f"Added {score}")
-    #             else:
-    #                 print("Skipped")
-    #         elif value:
-    #             earned_score += score
-    #             print(f"Added {score}")
-    #         else:
-    #             print("Skipped")
+            if isinstance(value, bool):
+                if value:
+                    earned_score += score
+                    print(f"Added {score}")
+                else:
+                    print("Skipped")
+            elif value:
+                earned_score += score
+                print(f"Added {score}")
+            else:
+                print("Skipped")
 
-    #     self.progress = (earned_score / total_score) * 100 if total_score > 0 else 0
-    #     print(f"Final earned_score = {earned_score}, Total = {total_score}, Progress = {self.progress}")
+        self.progress = (earned_score / total_score) * 100 if total_score > 0 else 0
+        print(f"Final earned_score = {earned_score}, Total = {total_score}, Progress = {self.progress}")
 
     
     

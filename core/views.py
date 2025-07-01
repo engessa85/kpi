@@ -71,28 +71,10 @@ def  main_admin_view(request):
 
 
 
-def get_progress(request, dep_id):
-    department = get_object_or_404(Department, id=dep_id)
-    # Get all users in this department
-    user_ids = UserDepartment.objects.filter(department=department).values_list('user_id', flat=True)
-
-    # Get all projects for those users
-    projects = ProjectForm.objects.filter(user_id__in=user_ids).order_by("-id")
-
-    progress_data = []
-    for project in projects:
-        progress_data.append({"id":project.id, "progress":project.progress, "project_name":project.project_name, "project_user_name":project.user.username})
-    
-    return JsonResponse(progress_data, safe=False)
 
 
-def get_progress_employee(request):
-    progress_data = []
-    projects = ProjectForm.objects.filter(user = request.user).order_by("-id")
-    for project in projects:
-        progress_data.append({"id":project.id, "progress":project.progress, "project_name":project.project_name, "project_user_name":project.user.username})
-    
-    return JsonResponse(progress_data, safe=False)
+
+
 
 
 
@@ -164,6 +146,36 @@ def employee_view(request):
         'extra_risks_range': range(1, 4),
         'extra_stack_range': range(1, 6),
     })
+
+
+
+#########################
+
+
+def get_progress(request, dep_id):
+    department = get_object_or_404(Department, id=dep_id)
+    # Get all users in this department
+    user_ids = UserDepartment.objects.filter(department=department).values_list('user_id', flat=True)
+
+    # Get all projects for those users
+    projects = ProjectForm.objects.filter(user_id__in=user_ids).order_by("-id")
+
+    progress_data = []
+    for project in projects:
+        progress_data.append({"id":project.id, "progress":project.progress, "project_name":project.project_name, "project_user_name":project.user.username})
+    
+    return JsonResponse(progress_data, safe=False)
+
+
+
+def get_progress_employee(request):
+    progress_data = []
+    projects = ProjectForm.objects.filter(user = request.user).order_by("-id")
+    for project in projects:
+        progress_data.append({"id":project.id, "progress":project.progress, "project_name":project.project_name, "project_user_name":project.user.username})
+    
+    return JsonResponse(progress_data, safe=False)
+
 
 
 
@@ -609,6 +621,10 @@ def modify_employee_projects_view(request, id):
     return render(request, 'employeeModify.html', {'project': project})
 
 
+@login_required
+def admin_modify_employee_projects_view(request, id):
+    project = get_object_or_404(ProjectForm, id=id)
+    return render(request, 'adminemployeeModify.html', {'project': project})
 
 
 def logout_view(request):

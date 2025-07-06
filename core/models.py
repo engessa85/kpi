@@ -405,32 +405,36 @@ class ProjectForm(models.Model):
     cl_cr_name6 = models.CharField(max_length=255, blank=True, null=True)
     cl_cost6 = models.CharField(max_length=255, blank=True, null=True)
 
-    cl_cr_name7 = models.CharField(max_length=255, blank=True, null=True)
-    cl_cost7 = models.CharField(max_length=255, blank=True, null=True)
 
-    cl_cr_name8 = models.CharField(max_length=255, blank=True, null=True)
-    cl_cost8 = models.CharField(max_length=255, blank=True, null=True)
 
-    cl_cr_name9 = models.CharField(max_length=255, blank=True, null=True)
-    cl_cost9 = models.CharField(max_length=255, blank=True, null=True)
 
-    cl_cr_name10 = models.CharField(max_length=255, blank=True, null=True)
-    cl_cost10 = models.CharField(max_length=255, blank=True, null=True)
 
-    cl_cr_name11 = models.CharField(max_length=255, blank=True, null=True)
-    cl_cost11 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cr_name7 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cost7 = models.CharField(max_length=255, blank=True, null=True)
 
-    cl_cr_name12 = models.CharField(max_length=255, blank=True, null=True)
-    cl_cost12 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cr_name8 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cost8 = models.CharField(max_length=255, blank=True, null=True)
 
-    cl_cr_name13 = models.CharField(max_length=255, blank=True, null=True)
-    cl_cost13 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cr_name9 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cost9 = models.CharField(max_length=255, blank=True, null=True)
 
-    cl_cr_name14 = models.CharField(max_length=255, blank=True, null=True)
-    cl_cost14 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cr_name10 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cost10 = models.CharField(max_length=255, blank=True, null=True)
 
-    cl_cr_name15 = models.CharField(max_length=255, blank=True, null=True)
-    cl_cost15 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cr_name11 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cost11 = models.CharField(max_length=255, blank=True, null=True)
+
+    # cl_cr_name12 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cost12 = models.CharField(max_length=255, blank=True, null=True)
+
+    # cl_cr_name13 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cost13 = models.CharField(max_length=255, blank=True, null=True)
+
+    # cl_cr_name14 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cost14 = models.CharField(max_length=255, blank=True, null=True)
+
+    # cl_cr_name15 = models.CharField(max_length=255, blank=True, null=True)
+    # cl_cost15 = models.CharField(max_length=255, blank=True, null=True)
     
     # Project Closure - Lessons Learned
     

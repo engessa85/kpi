@@ -540,32 +540,32 @@ def modify_employee_projects_view(request, id):
         project.cl_cr_name6 = request.POST.get("cl_cr_name6")
         project.cl_cost6 = request.POST.get("cl_cost6")
 
-        project.cl_cr_name7 = request.POST.get("cl_cr_name7")
-        project.cl_cost7 = request.POST.get("cl_cost7")
+        # project.cl_cr_name7 = request.POST.get("cl_cr_name7")
+        # project.cl_cost7 = request.POST.get("cl_cost7")
 
-        project.cl_cr_name8 = request.POST.get("cl_cr_name8")
-        project.cl_cost8 = request.POST.get("cl_cost8")
+        # project.cl_cr_name8 = request.POST.get("cl_cr_name8")
+        # project.cl_cost8 = request.POST.get("cl_cost8")
 
-        project.cl_cr_name9 = request.POST.get("cl_cr_name9")
-        project.cl_cost9 = request.POST.get("cl_cost9")
+        # project.cl_cr_name9 = request.POST.get("cl_cr_name9")
+        # project.cl_cost9 = request.POST.get("cl_cost9")
 
-        project.cl_cr_name10 = request.POST.get("cl_cr_name10")
-        project.cl_cost10 = request.POST.get("cl_cost10")
+        # project.cl_cr_name10 = request.POST.get("cl_cr_name10")
+        # project.cl_cost10 = request.POST.get("cl_cost10")
 
-        project.cl_cr_name11 = request.POST.get("cl_cr_name11")
-        project.cl_cost11 = request.POST.get("cl_cost11")
+        # project.cl_cr_name11 = request.POST.get("cl_cr_name11")
+        # project.cl_cost11 = request.POST.get("cl_cost11")
 
-        project.cl_cr_name12 = request.POST.get("cl_cr_name12")
-        project.cl_cost12 = request.POST.get("cl_cost12")
+        # project.cl_cr_name12 = request.POST.get("cl_cr_name12")
+        # project.cl_cost12 = request.POST.get("cl_cost12")
 
-        project.cl_cr_name13 = request.POST.get("cl_cr_name13")
-        project.cl_cost13 = request.POST.get("cl_cost13")
+        # project.cl_cr_name13 = request.POST.get("cl_cr_name13")
+        # project.cl_cost13 = request.POST.get("cl_cost13")
 
-        project.cl_cr_name14 = request.POST.get("cl_cr_name14")
-        project.cl_cost14 = request.POST.get("cl_cost14")
+        # project.cl_cr_name14 = request.POST.get("cl_cr_name14")
+        # project.cl_cost14 = request.POST.get("cl_cost14")
 
-        project.cl_cr_name15 = request.POST.get("cl_cr_name15")
-        project.cl_cost15 = request.POST.get("cl_cost15")
+        # project.cl_cr_name15 = request.POST.get("cl_cr_name15")
+        # project.cl_cost15 = request.POST.get("cl_cost15")
         
         # Project Closure - Lessons Learned
         
@@ -616,8 +616,6 @@ def modify_employee_projects_view(request, id):
         project.save()
         return redirect('employee-projects')  # or wherever you want
     
-
-
     return render(request, 'employeeModify.html', {'project': project})
 
 

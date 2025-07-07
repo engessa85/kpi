@@ -583,6 +583,56 @@ def modify_employee_projects_view(request, id):
         project.cl_imp3 = request.POST.get("cl_imp3")
         project.cl_ana3 = request.POST.get("cl_ana3")
         project.cl_re3 = request.POST.get("cl_re3")
+
+        project.cl_des4 = request.POST.get("cl_des4")
+        project.cl_imp4 = request.POST.get("cl_imp4")
+        project.cl_ana4 = request.POST.get("cl_ana4")
+        project.cl_re4 = request.POST.get("cl_re4")
+
+        project.cl_des5 = request.POST.get("cl_des5")
+        project.cl_imp5 = request.POST.get("cl_imp5")
+        project.cl_ana5 = request.POST.get("cl_ana5")
+        project.cl_re5 = request.POST.get("cl_re5")
+
+        project.cl_des6 = request.POST.get("cl_des6")
+        project.cl_imp6 = request.POST.get("cl_imp6")
+        project.cl_ana6 = request.POST.get("cl_ana6")
+        project.cl_re6 = request.POST.get("cl_re6")
+
+
+        project.cl_des7 = request.POST.get("cl_des7")
+        project.cl_imp7 = request.POST.get("cl_imp7")
+        project.cl_ana7 = request.POST.get("cl_ana7")
+        project.cl_re7 = request.POST.get("cl_re7")
+
+        project.cl_des8 = request.POST.get("cl_des8")
+        project.cl_imp8 = request.POST.get("cl_imp8")
+        project.cl_ana8 = request.POST.get("cl_ana8")
+        project.cl_re8 = request.POST.get("cl_re8")
+
+        project.cl_des9 = request.POST.get("cl_des9")
+        project.cl_imp9 = request.POST.get("cl_imp9")
+        project.cl_ana9 = request.POST.get("cl_ana9")
+        project.cl_re9 = request.POST.get("cl_re9")
+
+        project.cl_des10 = request.POST.get("cl_des10")
+        project.cl_imp10 = request.POST.get("cl_imp10")
+        project.cl_ana10 = request.POST.get("cl_ana10")
+        project.cl_re10 = request.POST.get("cl_re10")
+
+        project.cl_des11 = request.POST.get("cl_des11")
+        project.cl_imp11 = request.POST.get("cl_imp11")
+        project.cl_ana11 = request.POST.get("cl_ana11")
+        project.cl_re11 = request.POST.get("cl_re11")
+
+        project.cl_des12 = request.POST.get("cl_des12")
+        project.cl_imp12 = request.POST.get("cl_imp12")
+        project.cl_ana12 = request.POST.get("cl_ana12")
+        project.cl_re12 = request.POST.get("cl_re12")
+
+
+
+
         
         
         # Project Closure - Approvals

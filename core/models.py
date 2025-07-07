@@ -452,6 +452,57 @@ class ProjectForm(models.Model):
     cl_imp3 = models.CharField(max_length=255, blank=True, null=True)
     cl_ana3 = models.CharField(max_length=255, blank=True, null=True)
     cl_re3 = models.CharField(max_length=255, blank=True, null=True)
+
+
+    # new fields
+
+    cl_des4 = models.CharField(max_length=255, blank=True, null=True)
+    cl_imp4 = models.CharField(max_length=255, blank=True, null=True)
+    cl_ana4 = models.CharField(max_length=255, blank=True, null=True)
+    cl_re4 = models.CharField(max_length=255, blank=True, null=True)
+
+    cl_des5 = models.CharField(max_length=255, blank=True, null=True)
+    cl_imp5 = models.CharField(max_length=255, blank=True, null=True)
+    cl_ana5 = models.CharField(max_length=255, blank=True, null=True)
+    cl_re5 = models.CharField(max_length=255, blank=True, null=True)
+
+    cl_des6 = models.CharField(max_length=255, blank=True, null=True)
+    cl_imp6 = models.CharField(max_length=255, blank=True, null=True)
+    cl_ana6 = models.CharField(max_length=255, blank=True, null=True)
+    cl_re6 = models.CharField(max_length=255, blank=True, null=True)
+
+    cl_des7 = models.CharField(max_length=255, blank=True, null=True)
+    cl_imp7 = models.CharField(max_length=255, blank=True, null=True)
+    cl_ana7 = models.CharField(max_length=255, blank=True, null=True)
+    cl_re7 = models.CharField(max_length=255, blank=True, null=True)
+
+    cl_des8 = models.CharField(max_length=255, blank=True, null=True)
+    cl_imp8 = models.CharField(max_length=255, blank=True, null=True)
+    cl_ana8 = models.CharField(max_length=255, blank=True, null=True)
+    cl_re8 = models.CharField(max_length=255, blank=True, null=True)
+
+    cl_des9 = models.CharField(max_length=255, blank=True, null=True)
+    cl_imp9 = models.CharField(max_length=255, blank=True, null=True)
+    cl_ana9 = models.CharField(max_length=255, blank=True, null=True)
+    cl_re9 = models.CharField(max_length=255, blank=True, null=True)
+
+    cl_des10 = models.CharField(max_length=255, blank=True, null=True)
+    cl_imp10 = models.CharField(max_length=255, blank=True, null=True)
+    cl_ana10 = models.CharField(max_length=255, blank=True, null=True)
+    cl_re10 = models.CharField(max_length=255, blank=True, null=True)
+
+    cl_des11 = models.CharField(max_length=255, blank=True, null=True)
+    cl_imp11 = models.CharField(max_length=255, blank=True, null=True)
+    cl_ana11 = models.CharField(max_length=255, blank=True, null=True)
+    cl_re11 = models.CharField(max_length=255, blank=True, null=True)
+
+    cl_des12 = models.CharField(max_length=255, blank=True, null=True)
+    cl_imp12 = models.CharField(max_length=255, blank=True, null=True)
+    cl_ana12 = models.CharField(max_length=255, blank=True, null=True)
+    cl_re12 = models.CharField(max_length=255, blank=True, null=True)
+
+
+
     
     # Project Closure - Approvals
 
